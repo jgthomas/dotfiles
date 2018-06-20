@@ -41,6 +41,16 @@ cd() { builtin cd "$@"; ls; }
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
+## PYTHON
+
+# Add my packages to python path
+export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS
+
+# Set virtualenv path
+export WORKON_HOME=${HOME}/Code/VirtualEnvs
+source /usr/bin/virtualenvwrapper.sh
+
+
 ## HISTORY
 
 # Show time command in history used

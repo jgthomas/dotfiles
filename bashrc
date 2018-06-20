@@ -11,12 +11,6 @@ parse_git_branch() {
 # Bash prompt
 export PS1="\u@\h \[\033[32m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-# Up/down arrow searches through history
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\eOA": history-search-backward'
-bind '"\eOB": history-search-forward'
-
 # Set the default editors
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
@@ -60,6 +54,12 @@ source /usr/bin/virtualenvwrapper.sh
 
 
 ## HISTORY
+
+# Up/down arrow searches through history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
 
 # Show time command in history used
 export HISTTIMEFORMAT="%d/%m/%y %T "

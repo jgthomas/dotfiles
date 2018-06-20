@@ -1,3 +1,5 @@
+# GENERAL
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -22,6 +24,12 @@ export VISUAL="/usr/bin/vim"
 # Resize text with resized window
 shopt -s checkwinsize
 
+# Set ssh-agent socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+
+# FUNCTIONS
+
 # Colour output of man pages
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -37,8 +45,8 @@ man() {
 # List contents of directory as you enter
 cd() { builtin cd "$@"; ls; }
 
-# Set ssh-agent socket
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# Display PATH as vertical list
+path() ( IFS=: ; printf '%s\n' $PATH ; )
 
 
 ## PYTHON
@@ -68,6 +76,9 @@ shopt -s histappend
 
 # Sync history between bash sessions
 export PROMPT_COMMAND="history -a; history -n"
+
+# Commands NOT to add to history
+export HISTIGNORE="cd*:ls*"
 
 
 ## ALIASES

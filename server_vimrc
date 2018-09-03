@@ -1,0 +1,51 @@
+" Use Vim settings, rather than Vi settings 
+" This must be first, because it changes other options as a side effect
+set nocompatible
+
+" Make backspace like in other programs in insert mode 
+set backspace=indent,eol,start
+
+" Enable some indenting tweaks
+set autoindent " Match previous indent on new line
+set smartindent " Intelligently indent new lines
+
+" Switch on syntax highlighting 
+syntax on
+
+" Enable file type detection and do language-dependent indenting
+filetype plugin indent on
+
+" Turn line numbering on
+set number
+
+" Set character encoding
+set encoding=utf-8 " The encoding displayed on screen
+set fileencoding=utf-8 " The encoding written to files
+
+" Turn on spell checking
+" set spell spelllang=en_gb
+
+" Some tweaks for searching
+set ignorecase " Enable case-insensitive search
+set smartcase " If there are upper-case letters become case-sensitive
+set incsearch " Live incremental search
+
+" Tabs and spaces
+set tabstop=4 " Displays TAB characters as 4 spaces
+set softtabstop=4 " Insert 4 spaces when TAB is pressed
+set expandtab " Turns TAB key into shortcut for 4 spaces
+
+" Stop beeps on cursor errors
+set visualbell
+set noerrorbells
+
+" Customise status bar
+set laststatus=2 " Always show the status bar]
+set showmode " Show insert, visual or replace mode in status
+set ruler " Show column and line number in status
+
+" Silence broken bash error highlighting
+let g:sh_no_error=1
+
+" Toggle auto indent to allow well formatted pasting
+set pastetoggle=<F2>

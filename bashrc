@@ -107,6 +107,3 @@ alias getip='wget -qO- http://ipecho.net/plain ; echo'
 
 # Find IP address location
 alias wanip='curl ipinfo.io/$(getip) && echo'
-
-# Simple HTTP server
-alias ezhttps='python -m http.server'

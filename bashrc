@@ -107,3 +107,9 @@ alias getip='wget -qO- http://ipecho.net/plain ; echo'
 
 # Find IP address location
 alias wanip='curl ipinfo.io/$(getip) && echo'
+
+
+## SOURCE
+
+# Machine-specific commands
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

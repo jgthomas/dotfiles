@@ -42,6 +42,11 @@ cd() { builtin cd "$@"; ls; }
 # Display PATH as vertical list
 path() ( IFS=: ; printf '%s\n' $PATH ; )
 
+# cat file to screen and highlight pattern
+cathi() {
+    grep -E "$1|$" $2
+}
+
 
 ## PYTHON
 

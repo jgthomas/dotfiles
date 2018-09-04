@@ -47,6 +47,17 @@ cathi() {
     grep -E "$1|$" $2
 }
 
+# Search every file in directory for text, displays filename and line no.
+ftext ()
+{
+	# -i case-insensitive
+	# -I ignore binary files
+	# -H causes filename to be printed
+	# -r recursive search
+	# -n causes line number to be printed
+	grep -iIHrn --color=always "$1" . | less -r
+}
+
 
 ## PYTHON
 

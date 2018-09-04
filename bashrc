@@ -94,6 +94,22 @@ extract() {
     return "$e"
 }
 
+# Move up a specified number of directory levels
+up() {
+        if [[ $1 -lt 1 ]]; then
+                echo "Must be a positive number of levels up" >&2
+                return -1;
+        fi
+
+        curr=""
+
+        for ((i=1; i<=$1; i++)); do
+                curr="${curr}../"
+        done
+
+        cd $curr
+}
+
 
 ## PYTHON
 

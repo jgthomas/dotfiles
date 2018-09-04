@@ -55,7 +55,7 @@ ftext ()
 	# -H causes filename to be printed
 	# -r recursive search
 	# -n causes line number to be printed
-	grep -iIHrn --color=always "$1" . | less -r
+	grep -iIHrn --color=always --exclude-dir='.git' "$1" . | less -r
 }
 
 

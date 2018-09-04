@@ -15,8 +15,8 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\] $ "
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
 
-# Resize text with resized window
-shopt -s checkwinsize
+shopt -s checkwinsize # Resize text with resized window
+shopt -s extglob      # Allow more advanced pattern matching
 
 # Set ssh-agent socket
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -56,6 +56,42 @@ ftext ()
 	# -r recursive search
 	# -n causes line number to be printed
 	grep -iIHrn --color=always --exclude-dir='.git' "$1" . | less -r
+}
+
+# Extract range or archive files
+extract() {
+    local c e i
+
+    (($#)) || return
+
+    for i; do
+        c=''
+        e=1
+
+        if [[ ! -r $i ]]; then
+            echo "$0: file is unreadable: \`$i'" >&2
+            continue
+        fi
+
+        case $i in
+            *.t@(gz|lz|xz|b@(2|z?(2))|a@(z|r?(.@(Z|bz?(2)|gz|lzma|xz)))))
+                   c=(bsdtar xvf);;
+            *.7z)  c=(7z x);;
+            *.Z)   c=(uncompress);;
+            *.bz2) c=(bunzip2);;
+            *.exe) c=(cabextract);;
+            *.gz)  c=(gunzip);;
+            *.rar) c=(unrar x);;
+            *.xz)  c=(unxz);;
+            *.zip) c=(unzip);;
+            *)     echo "$0: unrecognized file extension: \`$i'" >&2
+                   continue;;
+        esac
+
+        command "${c[@]}" "$i"
+        ((e = e || $?))
+    done
+    return "$e"
 }
 
 

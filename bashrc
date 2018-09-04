@@ -83,7 +83,7 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
 
 # Commands NOT to add to history
-export HISTIGNORE="cd*:ls*:bg:fg:history"
+export HISTIGNORE="cd:ls:bg:fg:history:su"
 
 
 ## ALIASES

@@ -119,6 +119,11 @@ psgrep() {
         fi
 }
 
+# List all directories
+lsdir() {
+        ls -l . | grep ^d
+}
+
 
 ## PYTHON
 

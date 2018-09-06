@@ -3,14 +3,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Get current git branch
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Bash prompt
-export PS1="\u@\h \[\033[32m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\] $ "
-
 # Set the default editors
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
@@ -20,6 +12,24 @@ shopt -s extglob      # Allow more advanced pattern matching
 
 # Set ssh-agent socket
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+
+## PROMPT
+
+# Get current git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# Different colours for local and remote hosts
+if [[ -z "$DISPLAY" ]]; then
+        host="@\[\033[1;31m\]\h\[\033[00m\]"
+else
+        host="@\[\033[1;90m\]\h\[\033[00m\]"
+fi
+
+# Set prompt
+export PS1="\u${host} \[\033[32m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
 ## PYTHON

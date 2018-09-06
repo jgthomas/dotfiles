@@ -125,6 +125,12 @@ lsdir() {
 }
 
 
+# List all files
+lsfile() {
+        ls -l . | grep ^-
+}
+
+
 ## PYTHON
 
 # Add my packages to python path

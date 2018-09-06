@@ -191,6 +191,12 @@ lsfile() {
         ls -l . | grep ^-
 }
 
+# Set a base dir to return to easily
+setbase() {
+        BASE_DIR=$(pwd)
+        export BASE_DIR
+}
+
 
 ## SOURCE
 

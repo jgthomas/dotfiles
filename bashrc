@@ -22,6 +22,67 @@ shopt -s extglob      # Allow more advanced pattern matching
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
+## PYTHON
+
+# Add my packages to python path
+export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS
+
+# Set virtualenv path
+export WORKON_HOME=${HOME}/Code/VirtualEnvs
+source /usr/bin/virtualenvwrapper.sh
+
+
+## HISTORY
+
+# Up/down arrow searches through history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
+
+# Show time command in history used
+export HISTTIMEFORMAT="%d/%m/%y %T "
+
+# Ignores duplicates and omits commands prefixed by a space
+export HISTCONTROL=ignoredups:ignorespace
+
+# Increase command history size
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# Enable history appending instead of overwriting
+shopt -s histappend
+
+# Sync history between bash sessions
+export PROMPT_COMMAND="history -a; history -n"
+
+# Commands NOT to add to history
+export HISTIGNORE="cd:ls:bg:fg:history:su"
+
+
+## ALIASES
+
+# Colour output of ls and make human-readable
+alias ls='ls -h --color=auto'
+
+# Make human-readable the default
+alias df='df -h'
+alias du='du -h'
+
+# Highlight grepped terms
+export GREP_COLOR="1;34"
+alias grep='grep --color=auto'
+
+# Colour output of ip
+alias ip='ip -c'
+
+# Find public IP address
+alias getip='wget -qO- http://ipecho.net/plain ; echo'
+
+# Find IP address location
+alias wanip='curl ipinfo.io/$(getip) && echo'
+
+
 ## FUNCTIONS
 
 # Colour output of man pages
@@ -129,67 +190,6 @@ lsdir() {
 lsfile() {
         ls -l . | grep ^-
 }
-
-
-## PYTHON
-
-# Add my packages to python path
-export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS
-
-# Set virtualenv path
-export WORKON_HOME=${HOME}/Code/VirtualEnvs
-source /usr/bin/virtualenvwrapper.sh
-
-
-## HISTORY
-
-# Up/down arrow searches through history
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\eOA": history-search-backward'
-bind '"\eOB": history-search-forward'
-
-# Show time command in history used
-export HISTTIMEFORMAT="%d/%m/%y %T "
-
-# Ignores duplicates and omits commands prefixed by a space 
-export HISTCONTROL=ignoredups:ignorespace
-
-# Increase command history size
-HISTSIZE=10000
-HISTFILESIZE=20000
-
-# Enable history appending instead of overwriting
-shopt -s histappend
-
-# Sync history between bash sessions
-export PROMPT_COMMAND="history -a; history -n"
-
-# Commands NOT to add to history
-export HISTIGNORE="cd:ls:bg:fg:history:su"
-
-
-## ALIASES
-
-# Colour output of ls and make human-readable 
-alias ls='ls -h --color=auto'
-
-# Make human-readable the default
-alias df='df -h'
-alias du='du -h'
-
-# Highlight grepped terms 
-export GREP_COLOR="1;34"
-alias grep='grep --color=auto'
-
-# Colour output of ip
-alias ip='ip -c'
-
-# Find public IP address
-alias getip='wget -qO- http://ipecho.net/plain ; echo' 
-
-# Find IP address location
-alias wanip='curl ipinfo.io/$(getip) && echo'
 
 
 ## SOURCE

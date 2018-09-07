@@ -192,6 +192,11 @@ lsfile() {
         ls -l . | grep ^-
 }
 
+# List all dotfiles
+lsdot() {
+        ls -a | grep '^\.'
+}
+
 # Set a base dir to return to easily
 anchor() {
         ANCHOR=$(pwd)

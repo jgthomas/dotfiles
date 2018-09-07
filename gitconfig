@@ -1,0 +1,10 @@
+[user]
+	name = James Thomas
+	email = codeactor@protonmail.com
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[color]
+	ui = true
+[credential]
+	helper = store

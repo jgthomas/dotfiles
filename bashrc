@@ -181,15 +181,6 @@ up() {
         cd $curr
 }
 
-# Search and list processes with name
-psgrep() {
-        if [[ $# -gt 0 ]]; then
-                ps -ef | grep -i "$1" | grep -v grep
-        else
-                echo "Enter a term to earch for a process"
-        fi
-}
-
 # List all directories
 lsdir() {
         ls -l . | grep ^d

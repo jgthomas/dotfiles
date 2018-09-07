@@ -193,9 +193,14 @@ lsfile() {
 }
 
 # Set a base dir to return to easily
-setbase() {
-        BASE_DIR=$(pwd)
-        export BASE_DIR
+anchor() {
+        ANCHOR=$(pwd)
+        export ANCHOR
+}
+
+# Return to the anchor directory
+haul() {
+        cd $ANCHOR
 }
 
 

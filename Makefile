@@ -8,6 +8,8 @@ all: clean
 	mkdir -p ${HOME}/.config/pip
 	ln -s ${HOME}/dotfiles/pip.conf ${HOME}/.config/pip/pip.conf
 	[[ -f ${HOME}/.bash_aliases ]] || ln -s ${HOME}/dotfiles/bash_aliases ${HOME}/.bash_aliases
+	mkdir -p ${HOME}/.config/fontconfig
+	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -17,3 +19,4 @@ clean:
 	rm -rf ${HOME}/.bashrc
 	rm -rf ${HOME}/.bash_profile
 	rm -rf ${HOME}/.config/pip/pip.conf
+	rm -rf ${HOME}/.config/fontconfig/fonts.conf

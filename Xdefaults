@@ -1,0 +1,14 @@
+# font size
+URxvt*font: xft:Deja Vu Sans Mono:size=12
+
+# background colour
+URxvt*background: Black
+
+# text colour
+URxvt*foreground: White
+
+# no border
+URxvt*borderless: true
+
+# no scroll bar
+URxvt*scrollBar: false

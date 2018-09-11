@@ -80,8 +80,11 @@ set undolevels=1000
 set pastetoggle=<F2>
 
 " Make vim colours behave in tmux
+" Setting background to dark makes vim use easier to read colours
+" other setting prevents highlighting in Visual mode from breaking
 if exists("$TMUX")
         set background=dark
+        :highlight Visual cterm=reverse ctermbg=NONE
 endif
 
 " Easy window navigation

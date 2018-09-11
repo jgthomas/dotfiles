@@ -22,7 +22,6 @@ parse_git_branch() {
 }
 
 # Different colours for local and remote hosts
-#if [[ -z "$DISPLAY" ]]; then
 if [[ "$SSH_TTY" ]]; then
         host="@\[\033[1;31m\]\h\[\033[00m\]"
 else

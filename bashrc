@@ -29,7 +29,7 @@ else
 fi
 
 # Set prompt
-export PS1="\u${host} \[\033[32m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
 ## PYTHON

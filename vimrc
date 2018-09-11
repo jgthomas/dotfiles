@@ -79,6 +79,11 @@ set undolevels=1000
 " Toggle auto indent to allow well formatted pasting
 set pastetoggle=<F2>
 
+" Make vim colours behave in tmux
+if exists("$TMUX")
+        set background=dark
+endif
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j

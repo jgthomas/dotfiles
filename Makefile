@@ -9,7 +9,6 @@ all: clean
 	ln -s ${HOME}/dotfiles/bash_profile ${HOME}/.bash_profile
 	mkdir -p ${HOME}/.config/pip
 	ln -s ${HOME}/dotfiles/pip.conf ${HOME}/.config/pip/pip.conf
-	[[ -f ${HOME}/.bash_aliases ]] || ln -s ${HOME}/dotfiles/bash_aliases ${HOME}/.bash_aliases
 	mkdir -p ${HOME}/.config/fontconfig
 	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 

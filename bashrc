@@ -211,6 +211,10 @@ haul() {
         cd $ANCHOR
 }
 
+# Read markdown files in the terminal
+mdread() {
+        pandoc "$1" | w3m -T text/html
+}
 
 ## SOURCE
 

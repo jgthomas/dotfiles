@@ -218,7 +218,7 @@ mdread() {
 
 # Read PDF files in terminal
 pdfread() {
-        lesspipe "$1" | less
+        lesspipe.sh "$1" | less
 }
 
 # Google search direct from command line

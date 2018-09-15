@@ -216,6 +216,11 @@ mdread() {
         pandoc "$1" | w3m -T text/html
 }
 
+# Read PDF files in terminal
+pdfread() {
+        lesspipe "$1" | less
+}
+
 # Google search direct from command line
 google() {
         w3m google.com/search?q="$1"

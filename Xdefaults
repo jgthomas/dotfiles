@@ -22,9 +22,13 @@ URxvt*fading: 30
 # double buffering
 URxvt*buffered: true
 
-# enable transparency
+# enable true transparency - requires a compositor
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/dddd
+
+# fake transparency - copies wallpaper behind terminal
+#urxvt*transparent: true
+#urxvt*shading: 30
 
 
 # define some colours

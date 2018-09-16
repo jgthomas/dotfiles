@@ -19,6 +19,9 @@ URxvt*scrollstyle: plain
 # fade text on switch to different terminal
 URxvt*fading: 30
 
+# double buffering
+URxvt*buffered: true
+
 
 # define some colours
 *color0:  #2E3436

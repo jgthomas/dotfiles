@@ -12,3 +12,6 @@ URxvt*borderless: true
 
 # no scroll bar
 URxvt*scrollBar: false
+
+# fade text on switch to different terminal
+URxvt*fading: 30

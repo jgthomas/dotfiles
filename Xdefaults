@@ -1,37 +1,37 @@
-# font size
+! font size
 URxvt*font: xft:Deja Vu Sans Mono:size=13:antialias=true
 
-# background colour
+! background colour
 URxvt*background: Black
 
-# text colour
+! text colour
 URxvt*foreground: White
 
-# no border
+! no border
 URxvt*borderless: true
 
-# no scroll bar
+! no scroll bar
 URxvt*scrollBar: false
 
-# set scrollbar style to rxvt, plain, next or xterm
+! set scrollbar style to rxvt, plain, next or xterm
 URxvt*scrollstyle: plain
 
-# fade text on switch to different terminal
+! fade text on switch to different terminal
 URxvt*fading: 30
 
-# double buffering
+! double buffering
 URxvt*buffered: true
 
-# enable true transparency - requires a compositor
+! enable true transparency - requires a compositor
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/dddd
 
-# fake transparency - copies wallpaper behind terminal
-#urxvt*transparent: true
-#urxvt*shading: 30
+! fake transparency - copies wallpaper behind terminal
+!urxvt*transparent: true
+!urxvt*shading: 30
 
 
-# define some colours
+! define some colours
 *color0:  #2E3436
 *color1:  #a40000
 *color2:  #4E9A06

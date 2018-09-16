@@ -22,6 +22,10 @@ URxvt*fading: 30
 # double buffering
 URxvt*buffered: true
 
+# enable transparency
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+
 
 # define some colours
 *color0:  #2E3436

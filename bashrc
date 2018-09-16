@@ -3,6 +3,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Pull in credentials if found
+[[ -f ${HOME}/.credentials ]] && . ${HOME}/.credentials
+
 # Set the default editors
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
@@ -94,6 +97,15 @@ alias wanip='curl ipinfo.io/$(getip) && echo'
 
 # Check current battery state
 alias bat="upower -i $(upower -e | grep 'BAT')"
+
+# Run commands on rsync.net
+alias rsdncmd="ssh $RSYNC_DOT_NET_DOMAIN"
+
+# Backup databases for headlinewords.top
+alias dbbackup='scp webSiteServer:/var/www/headlinewords.top/html/data/*.db /home/james/Code/PROJECTS/BACKUPS/headlinewords_db'
+
+# Copy databases for headlinewords.top
+alias cpdatabases='scp webSiteServer:/var/www/headlinewords.top/html/data/*.db .'
 
 
 ## FUNCTIONS
@@ -229,4 +241,4 @@ google() {
 ## SOURCE
 
 # Machine-specific commands
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+#[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

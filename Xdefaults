@@ -1,5 +1,5 @@
 ! font size
-URxvt*font: xft:Deja Vu Sans Mono:size=13:antialias=true
+URxvt*font: xft:Deja Vu Sans Mono:size=12:antialias=true
 
 ! background colour
 URxvt*background: Black
@@ -29,7 +29,6 @@ urxvt*background: rgba:0000/0000/0200/dddd
 ! fake transparency - copies wallpaper behind terminal
 !urxvt*transparent: true
 !urxvt*shading: 30
-
 
 ! define some colours
 *color0:  #2E3436

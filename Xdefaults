@@ -1,5 +1,5 @@
 # font size
-URxvt*font: xft:Deja Vu Sans Mono:size=12
+URxvt*font: xft:Deja Vu Sans Mono:size=13:antialias=true
 
 # background colour
 URxvt*background: Black

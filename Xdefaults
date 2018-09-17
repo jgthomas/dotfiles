@@ -80,3 +80,11 @@ URxvt*color14:#9aedfe
 ! LightGrey + White
 URxvt*color7: #eff0eb
 URxvt*color15:#f1f1f0
+
+! perl extensions for links and clipboard
+! URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+! URxvt.url-select.launcher:  firefox
+! URxvt.url-select.underline: true
+! URxvt.keysym.M-u:           perl:url-select:select_next
+! URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+! URxvt.keysym.M-s:           perl:keyboard-select:search

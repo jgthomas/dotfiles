@@ -93,7 +93,7 @@ alias getip='wget -qO- http://ipecho.net/plain ; echo'
 alias wanip='curl ipinfo.io/$(getip) && echo'
 
 # Check current battery state
-alias bat="upower -i $(upower -e | grep 'BAT')"
+alias batt="upower -i $(upower -e | grep 'BAT')"
 
 
 ## FUNCTIONS

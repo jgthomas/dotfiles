@@ -2,7 +2,7 @@
 URxvt*font: xft:Deja Vu Sans Mono:size=12:antialias=true
 
 ! background colour
-URxvt*background: Black
+!URxvt*background: Black
 
 ! text colour
 URxvt*foreground: White
@@ -24,7 +24,7 @@ URxvt*buffered: true
 
 ! enable true transparency - requires a compositor
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/eeee
+urxvt*background: rgba:0000/0000/0200/dddd
 
 ! fake transparency - copies wallpaper behind terminal
 !urxvt*transparent: true

@@ -226,6 +226,13 @@ google() {
         w3m google.com/search?q="$1"
 }
 
+# Report all explicity installed packages
+# excluding those in base, base-devel and xorg
+listpkgs() {
+        comm -23 <(pacman -Qteq) <(pacman -Qqg base base-devel xorg | sort) > pkglist.txt
+}
+
+
 ## SOURCE
 
 # Machine-specific commands

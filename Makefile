@@ -11,6 +11,8 @@ all: clean
 	ln -s ${HOME}/dotfiles/pip.conf ${HOME}/.config/pip/pip.conf
 	mkdir -p ${HOME}/.config/fontconfig
 	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
+	mkdir -p ${HOME}/.config/mpv
+	ln -s ${HOME}/dotfiles/mpv.conf ${HOME}/.config/mpv/mpv.conf
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -23,3 +25,4 @@ clean:
 	rm -rf ${HOME}/.bash_profile
 	rm -rf ${HOME}/.config/pip/pip.conf
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
+	rm -rf ${HOME}/.config/mpv/mpv.conf

@@ -229,7 +229,9 @@ google() {
 # Report all explicity installed packages
 # excluding those in base, base-devel and xorg
 listpkgs() {
-        comm -23 <(pacman -Qteq | sort) <(pacman -Qqg base base-devel xorg | sort) > pkglist.txt
+        comm -23 <(pacman -Qteq | sort) \
+                 <(pacman -Qqg base base-devel xorg | sort) \
+                 > pkglist.txt
 }
 
 

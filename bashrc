@@ -226,8 +226,8 @@ google() {
         w3m google.com/search?q="$1"
 }
 
-# Report all explicity installed packages
-# excluding those in base, base-devel and xorg
+# Report all explicity installed packages, ignoring dependencies
+# and excluding those in the base, base-devel and xorg groups
 listpkgs() {
         comm -23 <(pacman -Qteq | sort) \
                  <(pacman -Qqg base base-devel xorg | sort) \

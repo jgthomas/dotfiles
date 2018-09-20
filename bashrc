@@ -95,6 +95,13 @@ alias wanip='curl ipinfo.io/$(getip) && echo'
 # Check current battery state
 alias batt="upower -i $(upower -e | grep 'BAT')"
 
+# Run commands on remote backup
+if [[ -f ${HOME}/.credentials ]]; then
+        . ${HOME}/.credentials
+        alias rsdncmd='ssh $RSYNC_DOT_NET_USER@$RSYNC_DOT_NET_DOMAIN'
+fi
+
+
 
 ## FUNCTIONS
 

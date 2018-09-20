@@ -234,6 +234,11 @@ listpkgs() {
                  > pkglist.txt
 }
 
+# Report all packages installed from a particular repository
+repopkgs() {
+        pacman -Sl "$1" | grep installed | awk '{print $2}'
+}
+
 
 ## SOURCE
 

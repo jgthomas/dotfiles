@@ -229,14 +229,18 @@ google() {
 # Report all explicity installed packages, ignoring dependencies
 # and excluding those in the base, base-devel and xorg groups
 listpkgs() {
-        comm -23 <(pacman -Qteq | sort) \
-                 <(pacman -Qqg base base-devel xorg | sort) \
-                 > pkglist.txt
+        comm -23 <(pacman -Qteq | sort) <(pacman -Qqg base base-devel xorg | sort)
 }
 
 # Report all packages installed from a particular repository
 repopkgs() {
         pacman -Sl "$1" | grep installed | awk '{print $2}'
+}
+
+# Report all packages installed from a named repo that are not
+# in the base, base-devel or xorg groups
+repo_nongroup() {
+        comm -23 <(repopkgs "$1" | sort) <(pacman -Qqg base base-devel xorg | sort)
 }
 
 

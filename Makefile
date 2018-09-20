@@ -7,6 +7,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/Xdefaults ${HOME}/.Xdefaults
 	ln -s ${HOME}/dotfiles/xinitrc ${HOME}/.xinitrc
 	ln -s ${HOME}/dotfiles/bash_profile ${HOME}/.bash_profile
+	ln -s ${HOME}/dotfiles/inputrc ${HOME}/.inputrc
 	mkdir -p ${HOME}/.config/pip
 	ln -s ${HOME}/dotfiles/pip.conf ${HOME}/.config/pip/pip.conf
 	mkdir -p ${HOME}/.config/fontconfig
@@ -23,6 +24,7 @@ clean:
 	rm -rf ${HOME}/.Xdefaults
 	rm -rf ${HOME}/.xinitrc
 	rm -rf ${HOME}/.bash_profile
+	rm -rf ${HOME}/.inputrc
 	rm -rf ${HOME}/.config/pip/pip.conf
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
 	rm -rf ${HOME}/.config/mpv/mpv.conf

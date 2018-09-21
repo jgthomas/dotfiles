@@ -44,12 +44,6 @@ source /usr/bin/virtualenvwrapper.sh
 
 ## HISTORY
 
-# Up/down arrow searches through history
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\eOA": history-search-backward'
-bind '"\eOB": history-search-forward'
-
 # Show time command in history used
 export HISTTIMEFORMAT="%d/%m/%y %T "
 

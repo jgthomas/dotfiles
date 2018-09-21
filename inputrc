@@ -10,6 +10,10 @@ $include  /etc/inputrc
 "\e[C": forward-char
 "\e[D": backward-char
 
+# Use Alt-Left and Alt-Right to jump along by word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
 set colored-stats On
 set completion-ignore-case On
 set completion-prefix-display-length 3

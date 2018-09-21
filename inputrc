@@ -21,3 +21,4 @@ set mark-symlinked-directories On
 set show-all-if-ambiguous On
 set show-all-if-unmodified On
 set visible-stats On
+set echo-control-characters off

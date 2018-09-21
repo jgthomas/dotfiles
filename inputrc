@@ -1,9 +1,12 @@
 $include  /etc/inputrc
 
+# Enable arrow key search through command history
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\eOA": history-search-backward'
 "\eOB": history-search-forward'
+
+# Ensure left and right arrows work as normal
 "\e[C": forward-char
 "\e[D": backward-char
 

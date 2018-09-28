@@ -1,5 +1,9 @@
 $include  /etc/inputrc
 
+# Enable vim-style shortcuts
+#set editing-mode vi
+#set keymap vi-command
+
 # Enable arrow key search through command history
 "\e[A": history-search-backward
 "\e[B": history-search-forward

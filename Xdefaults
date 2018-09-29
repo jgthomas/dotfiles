@@ -48,37 +48,23 @@ urxvt*background: rgba:0000/0000/0200/dddd
 !*color14: #fcaf3e
 !*color15: #EEEEEC
 
-! Snazzy theme: https://github.com/sindresorhus/hyper-snazzy
-! Black + DarkGrey
-URxvt*color0: #282a36
+! Snazzy theme
+! https://github.com/sindresorhus/hyper-snazzy
+URxvt*color0: #282a36 ! Black + DarkGrey
 URxvt*color8: #686868
-
-! DarkRed + Red
-URxvt*color1: #ff5c57
+URxvt*color1: #ff5c57 ! DarkRed + Red
 URxvt*color9: #ff5c57
-
-! DarkGreen + Green
-URxvt*color2: #5af78e
+URxvt*color2: #5af78e ! DarkGreen + Green
 URxvt*color10:#5af78e
-
-! DarkYellow + Yellow
-URxvt*color3: #f3f99d
+URxvt*color3: #f3f99d ! DarkYellow + Yellow
 URxvt*color11:#f3f99d
-
-! DarkBlue + Blue
-URxvt*color4: #57c7ff
+URxvt*color4: #57c7ff ! DarkBlue + Blue
 URxvt*color12:#57c7ff
-
-! DarkMagenta + Magenta
-URxvt*color5: #ff6ac1
+URxvt*color5: #ff6ac1 ! DarkMagenta + Magenta
 URxvt*color13:#ff6ac1
-
-! DarkCyan + Cyan (both not tango)
-URxvt*color6: #9aedfe
+URxvt*color6: #9aedfe ! DarkCyan + Cyan (both not tango)
 URxvt*color14:#9aedfe
-
-! LightGrey + White
-URxvt*color7: #eff0eb
+URxvt*color7: #eff0eb ! LightGrey + White
 URxvt*color15:#f1f1f0
 
 ! perl extensions for links and clipboard

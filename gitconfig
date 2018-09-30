@@ -1,6 +1,7 @@
 [user]
-	name = James Thomas
-	email = codeactor@protonmail.com
+    # set in ~/.gitconfig_local
+[include]
+    path = ~/.gitconfig_local
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore

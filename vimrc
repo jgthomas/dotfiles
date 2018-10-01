@@ -5,6 +5,9 @@ set nocompatible
 " Load plugins
 call pathogen#infect()
 
+" If using snazzy theme, use transparent background
+let g:SnazzyTransparent = 1
+
 " Switch on syntax highlighting 
 syntax on
 

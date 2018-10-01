@@ -12,6 +12,7 @@ let g:SnazzyTransparent = 1
 syntax on
 
 " Display all matching files in status bar on tab
+" start with :b to search buffers
 set wildmenu
 
 " Enable file type detection and do language-dependent indenting

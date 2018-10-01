@@ -11,6 +11,9 @@ let g:SnazzyTransparent = 1
 " Switch on syntax highlighting 
 syntax on
 
+" Display all matching files in status bar on tab
+set wildmenu
+
 " Enable file type detection and do language-dependent indenting
 filetype plugin indent on
 

@@ -11,6 +11,9 @@ let g:SnazzyTransparent = 1
 " Switch on syntax highlighting 
 syntax on
 
+" Tab-based autocomplete below words
+set wildmode=longest,list,full
+
 " Display all matching files in status bar on tab
 " start with :b to search buffers
 set wildmenu

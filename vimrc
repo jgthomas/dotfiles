@@ -36,6 +36,9 @@ set hidden
 " Autosave changes when switching buffers
 set autowrite
 
+" Show matching parentheses on selecting other
+set showmatch
+
 " Built-in file browser settings
 let g:netrw_banner = 0 "disable the useless header
 "let g:netrw_liststyle = 3 "default to tree-style list of files
@@ -70,8 +73,8 @@ au BufEnter * :syntax sync fromstart
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Set a swap and backup location for all files
-set directory=/home/james/.vim/swapfiles//
-set backupdir=/home/james/.vim/backup//
+set directory=/home/james/.vim/swapfiles/
+set backupdir=/home/james/.vim/backup/
 
 " Tabs and spaces
 set tabstop=4 " Displays TAB characters as 4 spaces

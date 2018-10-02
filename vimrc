@@ -5,15 +5,14 @@ set nocompatible
 " Load plugins
 call pathogen#infect()
 
-" If using snazzy theme, use transparent background
-let g:SnazzyTransparent = 1
-
 " Switch on syntax highlighting
 syntax on
 
 " Set theme
 colorscheme gruvbox
 set background=dark
+" If using snazzy theme, use transparent background
+"let g:SnazzyTransparent = 1
 
 " Allow recursive search into subdirectories
 " when using :find

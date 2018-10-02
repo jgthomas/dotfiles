@@ -1,4 +1,4 @@
-" Use Vim settings, rather than Vi settings 
+" Use Vim settings, rather than Vi settings
 " This must be first, because it changes other options as a side effect
 set nocompatible
 
@@ -8,7 +8,7 @@ call pathogen#infect()
 " If using snazzy theme, use transparent background
 let g:SnazzyTransparent = 1
 
-" Switch on syntax highlighting 
+" Switch on syntax highlighting
 syntax on
 
 " Allow recursive search into subdirectories
@@ -54,6 +54,10 @@ au BufRead,BufNewFile *.s set filetype=gas
 " Hightlight from start of file
 au BufEnter * :syntax sync fromstart
 
+" Delete whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+
 " Set a swap and backup location for all files
 set directory=/home/james/.vim/swapfiles//
 set backupdir=/home/james/.vim/backup//
@@ -86,7 +90,7 @@ set smartcase " If there are upper-case letters become case-sensitive
 set incsearch " Live incremental search
 set hlsearch " highlight search terms
 " Clear previous search highlight
-nmap <silent> ,/ :nohlsearch<CR> 
+nmap <silent> ,/ :nohlsearch<CR>
 
 " Show statusline
 set laststatus=2
@@ -123,5 +127,5 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Make backspace like in other programs in insert mode 
+" Make backspace like in other programs in insert mode
 set backspace=indent,eol,start

@@ -28,7 +28,7 @@ set wildmenu
 "Ignore certain files and directories
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=*.pdf
-set wildignore+=*/node_modules/*
+set wildignore+=*/node_modules/*,*/__pycache__/*
 
 " Built-in file browser settings
 let g:netrw_banner = 0 "disable the useless header
@@ -40,6 +40,9 @@ let g:netrw_banner = 0 "disable the useless header
 "        autocmd!
 "        autocmd VimEnter * :Vexplore
 "augroup end
+
+" Reload vimrc on \r
+map <leader>s :source ~/.vimrc<CR>
 
 " Enable file type detection and do language-dependent indenting
 filetype plugin indent on

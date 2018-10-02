@@ -11,12 +11,32 @@ let g:SnazzyTransparent = 1
 " Switch on syntax highlighting 
 syntax on
 
+" Allow recursive search into subdirectories
+" when using :find
+set path+=**
+
 " Tab-based autocomplete below words
 set wildmode=longest,list,full
 
 " Display all matching files in status bar on tab
 " start with :b to search buffers
 set wildmenu
+
+"Ignore certain files and directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=*.pdf
+set wildignore+=*/node_modules/*
+
+" Built-in file browser settings
+let g:netrw_banner = 0 "disable the useless header
+"let g:netrw_liststyle = 3 "default to tree-style list of files
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25 "only use this percentage of the screen
+" Start file browser automatically on the left
+"augroup ProjectDrawer
+"        autocmd!
+"        autocmd VimEnter * :Vexplore
+"augroup end
 
 " Enable file type detection and do language-dependent indenting
 filetype plugin indent on

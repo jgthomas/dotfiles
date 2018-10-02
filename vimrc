@@ -32,7 +32,6 @@ set wildignore+=*/node_modules/*,*/__pycache__/*
 
 " Keep more info in memory to speed things
 set hidden
-set history=100
 
 " Autosave changes when switching buffers
 set autowrite
@@ -69,7 +68,6 @@ au BufEnter * :syntax sync fromstart
 
 " Delete whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
-
 
 " Set a swap and backup location for all files
 set directory=/home/james/.vim/swapfiles//

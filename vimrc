@@ -102,6 +102,8 @@ set incsearch " Live incremental search
 set hlsearch " highlight search terms
 " Clear previous search highlight
 nmap <silent> ,/ :nohlsearch<CR>
+" Cancel search with escape
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " Show statusline
 set laststatus=2

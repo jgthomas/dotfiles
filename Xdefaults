@@ -83,6 +83,16 @@ URxvt*color14: #9AEDFE
 URxvt*color15: #F1F1F0
 
 
+! Make saner cut and paste shortcuts
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
+! Disable annoying "special" modes
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
 ! perl extensions for links and clipboard
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
 URxvt.url-select.launcher:  firefox

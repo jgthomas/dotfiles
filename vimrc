@@ -94,6 +94,8 @@ set noerrorbells
 
 " Turn line numbering on
 set number
+" When set with above enables a hybrid of absolute and relative line nums
+set relativenumber
 
 " Show if text goes too far to the right
 set colorcolumn=80

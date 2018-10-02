@@ -30,6 +30,13 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=*.pdf
 set wildignore+=*/node_modules/*,*/__pycache__/*
 
+" Keep more info in memory to speed things
+set hidden
+set history=100
+
+" Autosave changes when switching buffers
+set autowrite
+
 " Built-in file browser settings
 let g:netrw_banner = 0 "disable the useless header
 "let g:netrw_liststyle = 3 "default to tree-style list of files

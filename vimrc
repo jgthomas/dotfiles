@@ -11,6 +11,10 @@ let g:SnazzyTransparent = 1
 " Switch on syntax highlighting
 syntax on
 
+" Set theme
+colorscheme gruvbox
+set background=dark
+
 " Allow recursive search into subdirectories
 " when using :find
 set path+=**

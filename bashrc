@@ -42,6 +42,12 @@ export WORKON_HOME=${HOME}/Code/VirtualEnvs
 source /usr/bin/virtualenvwrapper.sh
 
 
+## Java
+
+# Quickly output javadoc to own directory
+alias jdt='javadoc -d docs -html5'
+
+
 ## HISTORY
 
 # Show time command in history used

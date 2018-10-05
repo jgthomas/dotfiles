@@ -29,6 +29,7 @@ set wildmenu
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=*.pdf
 set wildignore+=*/node_modules/*,*/__pycache__/*
+set wildignore+=*.class
 
 " Keep more info in memory to speed things
 set hidden

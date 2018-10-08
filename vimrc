@@ -144,5 +144,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Change cursor in response to mode
+" for urxvt or tmux
+if exists("$TMUX")
+        let &t_SI = "\ePtmux;\e\e[6 q\e\\"
+        let &t_SR = "\ePtmux;\e\e[4 q\e\\"
+        let &t_EI = "\ePtmux;\e\e[2 q\e\\"
+else
+        let &t_SI = "\e[6 q"  " Beam in insert
+        let &t_SR = "\e[4 q"  " Underline in replace
+        let &t_EI = "\e[2 q"  " Block in normal mode
+endif
+
 " Make backspace like in other programs in insert mode
 set backspace=indent,eol,start

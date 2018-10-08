@@ -99,7 +99,8 @@ set number
 set relativenumber
 
 " Show if text goes too far to the right
-set colorcolumn=80
+" shows a line at 80 characters and solid block from 110 onwards
+let &colorcolumn="80,".join(range(110,999),",")
 
 " Some tweaks for searching
 "set ignorecase " Enable case-insensitive search

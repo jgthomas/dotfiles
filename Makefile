@@ -1,5 +1,6 @@
 all: clean
 	ln -s ${HOME}/dotfiles/vimrc ${HOME}/.vimrc
+	ln -s ${HOME}/dotfiles/lispwords ${HOME}/.lispwords
 	ln -s ${HOME}/dotfiles/gitignore ${HOME}/.gitignore
 	ln -s ${HOME}/dotfiles/gitconfig ${HOME}/.gitconfig
 	ln -s ${HOME}/dotfiles/tmux.conf ${HOME}/.tmux.conf
@@ -18,6 +19,7 @@ all: clean
 
 clean:
 	rm -rf ${HOME}/.vimrc
+	rm -rf ${HOME}/.lispwords
 	rm -rf ${HOME}/.gitignore
 	rm -rf ${HOME}/.gitconfig
 	rm -rf ${HOME}/.tmux.conf

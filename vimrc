@@ -62,6 +62,9 @@ autocmd FileType javascript setlocal expandtab tabstop=4 sw=4 softtabstop=4
 autocmd FileType html setlocal expandtab tabstop=2 sw=2 softtabstop=2
 autocmd FileType lisp,scheme,art setlocal equalprg=scmindent.rkt
 
+" Turn on rainbow parentheses for lisp
+let g:lisp_rainbow = 1
+
 " Turn on spell checking for text files
 autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_gb
 

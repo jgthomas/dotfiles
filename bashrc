@@ -48,6 +48,12 @@ source /usr/bin/virtualenvwrapper.sh
 alias jdt='javadoc -d docs -html5'
 
 
+## Scheme
+
+# launch with SICP support
+alias racket='racket -i -p neil/sicp -l xrepl'
+
+
 ## HISTORY
 
 # Show time command in history used

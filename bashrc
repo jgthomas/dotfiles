@@ -51,7 +51,7 @@ alias jdt='javadoc -d docs -html5'
 ## Scheme
 
 # launch with SICP support
-alias racket='racket -i -p neil/sicp -l xrepl'
+alias rkt='racket -i -p neil/sicp -l xrepl'
 
 
 ## HISTORY

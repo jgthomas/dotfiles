@@ -62,7 +62,7 @@ autocmd FileType javascript setlocal expandtab tabstop=4 sw=4 softtabstop=4
 autocmd FileType html setlocal expandtab tabstop=2 sw=2 softtabstop=2
 autocmd FileType lisp,scheme,art setlocal equalprg=scmindent.rkt
 
-" Detect filetypes a lisp
+" Detect filetypes as lisp to allow correct parentheses highlighting
 if has("autocmd")
         au BufReadPost *.scm,*.rkt,*.rktl set filetype=lisp
 endif

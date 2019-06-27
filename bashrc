@@ -42,6 +42,11 @@ export WORKON_HOME=${HOME}/Code/VirtualEnvs
 source /usr/bin/virtualenvwrapper.sh
 
 
+## RUBY
+export GEM_HOME=${HOME}/.gem
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
+
 ## Java
 
 # Quickly output javadoc to own directory

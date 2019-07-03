@@ -35,7 +35,7 @@ export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\]
 ## PYTHON
 
 # Add my packages to python path
-export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS
+export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses/summer_project
 
 # Set virtualenv path
 export WORKON_HOME=${HOME}/Code/VirtualEnvs

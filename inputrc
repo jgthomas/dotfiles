@@ -1,18 +1,20 @@
-$include  /etc/inputrc
+#$include  /etc/inputrc
+#
+## Enable vim-style shortcuts
+##set editing-mode vi
+##set keymap vi-command
 
-# Enable vim-style shortcuts
-#set editing-mode vi
-#set keymap vi-command
-
-# Enable arrow key search through command history
+## Enable arrow key search through command history
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
 
-# Ensure left and right arrows work as normal
+## Ensure left and right arrows work as normal
 "\e[C": forward-char
 "\e[D": backward-char
 
-# Use Alt-Left and Alt-Right to jump along by word
+## Use Alt-Left and Alt-Right to jump along by word
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
 

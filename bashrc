@@ -65,7 +65,7 @@ alias rkt='racket -i -p neil/sicp -l xrepl'
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Ignores duplicates and omits commands prefixed by a space
-export HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoredups:erasedups:ignorespace
 
 # Increase command history size
 HISTSIZE=10000
@@ -75,7 +75,9 @@ HISTFILESIZE=20000
 shopt -s histappend
 
 # Sync history between bash sessions
-export PROMPT_COMMAND="history -a; history -n"
+# see https://unix.stackexchange.com/a/18443 for how
+# this interacts with HISTCONTROL
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # Commands NOT to add to history
 export HISTIGNORE="cd:ls:bg:fg:history:su"

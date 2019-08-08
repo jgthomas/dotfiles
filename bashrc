@@ -112,6 +112,8 @@ fi
 # Update AUR packages
 alias aur_update="aur sync -d aur_packages -u"
 
+# Copy CV to dropbox
+alias pubcv="rclone copy CV.pdf my_dropbox:"
 
 
 ## FUNCTIONS

@@ -123,18 +123,18 @@ alias wifipow="watch -n 1 cat /proc/net/wireless"
 
 # Control VPN connection
 wgvpn() {
-        usage="wgvpn start|stop|status [country]"
-
-        if (($# == 0)); then
-                echo $usage
-                return
-        fi
-
         country="switzerland"
+        usage="wgvpn start|stop|status [country], defaults to "$country
 
-        if (($# == 2)); then
-                country="$2"
-        fi
+        case $# in
+                0)
+                        echo $usage
+                        return
+                        ;;
+                2)
+                        country="$2"
+                        ;;
+        esac
 
         case "$1" in
                 "start")

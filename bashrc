@@ -155,11 +155,14 @@ wgvpn() {
 
 # Search package install history
 pkglog() {
+        logfile="/var/log/pacman.log"
+        args="-a --color=always "
+
         if (($# == 2)); then
-                grep -a --color=always -C "$2" "$1" /var/log/pacman.log | less -R
-        else
-                grep -a --color=always "$1" /var/log/pacman.log | less -R
+                args=$args"-C"$2
         fi
+
+        grep $args $1 $logfile | less -R
 }
 
 # Colour output of man pages

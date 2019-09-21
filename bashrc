@@ -144,7 +144,7 @@ wgvpn() {
 
 
 # Search package install history
-fndpkg() {
+pkglog() {
         if (($# == 2)); then
                 grep -a --color=always -C "$2" "$1" /var/log/pacman.log | less -R
         else

@@ -118,6 +118,11 @@ alias pubcv="rclone copy CV.pdf my_dropbox:"
 
 ## FUNCTIONS
 
+# Search package install history
+fndpkg() {
+        grep -a --color=always "$1" /var/log/pacman.log | less -R
+}
+
 # Colour output of man pages
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \

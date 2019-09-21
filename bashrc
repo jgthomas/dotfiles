@@ -123,6 +123,13 @@ alias wifipow="watch -n 1 cat /proc/net/wireless"
 
 # Control VPN connection
 wgvpn() {
+        usage="wgvpn start|stop|status [country]"
+
+        if (($# == 0)); then
+                echo $usage
+                return
+        fi
+
         country="switzerland"
 
         if (($# == 2)); then
@@ -138,6 +145,9 @@ wgvpn() {
                         ;;
                 "status")
                         sudo wg show
+                        ;;
+                *)
+                        echo $usage
                         ;;
         esac
 }

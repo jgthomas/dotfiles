@@ -123,7 +123,11 @@ alias wifipow="watch -n 1 cat /proc/net/wireless"
 
 # Search package install history
 fndpkg() {
-        grep -a --color=always "$1" /var/log/pacman.log | less -R
+        if (($# == 2)); then
+                grep -a --color=always -C "$2" "$1" /var/log/pacman.log | less -R
+        else
+                grep -a --color=always "$1" /var/log/pacman.log | less -R
+        fi
 }
 
 # Colour output of man pages

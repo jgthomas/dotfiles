@@ -152,7 +152,6 @@ wgvpn() {
         esac
 }
 
-
 # Search package install history
 pkglog() {
         logfile="/var/log/pacman.log"

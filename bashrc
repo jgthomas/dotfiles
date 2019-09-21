@@ -121,6 +121,28 @@ alias wifipow="watch -n 1 cat /proc/net/wireless"
 
 ## FUNCTIONS
 
+# Control VPN connection
+wgvpn() {
+        country="switzerland"
+
+        if (($# == 2)); then
+                country="$2"
+        fi
+
+        case "$1" in
+                "start")
+                        sudo wg-quick up $country
+                        ;;
+                "stop")
+                        sudo wg-quick down $country
+                        ;;
+                "status")
+                        sudo wg show
+                        ;;
+        esac
+}
+
+
 # Search package install history
 fndpkg() {
         if (($# == 2)); then

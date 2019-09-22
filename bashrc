@@ -126,18 +126,7 @@ wgvpn() {
         default="switzerland"
         usage="wgvpn start|stop|status [country], defaults to *"$default"*"
 
-        case $# in
-                0)
-                        echo $usage
-                        return
-                        ;;
-                1)
-                        country=$default
-                        ;;
-                2)
-                        country="$2"
-                        ;;
-        esac
+        [[ $# -eq 2 ]] && country=$2 || country=$default
 
         case "$1" in
                 "start")

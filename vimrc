@@ -40,6 +40,10 @@ set autowrite
 " Show matching parentheses on selecting other
 set showmatch
 
+" Allow access to main graphical clipboard
+noremap <C-Y> "+y
+noremap <C-P> "+p
+
 " Built-in file browser settings
 let g:netrw_banner = 0 "disable the useless header
 "let g:netrw_liststyle = 3 "default to tree-style list of files

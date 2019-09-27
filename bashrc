@@ -47,13 +47,13 @@ export GEM_HOME=${HOME}/.gem
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 
-## Java
+## JAVA
 
 # Quickly output javadoc to own directory
 alias jdt='javadoc -d docs -html5'
 
 
-## Scheme
+## SCHEME
 
 # launch with SICP support
 alias rkt='racket -i -p neil/sicp -l xrepl'
@@ -306,3 +306,9 @@ repo_nongroup() {
 
 # Machine-specific commands
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# Node version manager
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec

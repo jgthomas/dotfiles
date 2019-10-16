@@ -59,6 +59,13 @@ alias jdt='javadoc -d docs -html5'
 alias rkt='racket -i -p neil/sicp -l xrepl'
 
 
+## GOLANG
+
+# go path
+GOPATH=$HOME/go
+PATH=$PATH:$GOPATH
+
+
 ## HISTORY
 
 # Show time command in history used

@@ -63,7 +63,7 @@ alias rkt='racket -i -p neil/sicp -l xrepl'
 
 # go path
 GOPATH=$HOME/go
-PATH=$PATH:$GOPATH
+PATH=$PATH:$GOPATH/bin
 
 
 ## HISTORY

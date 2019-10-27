@@ -16,6 +16,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 	mkdir -p ${HOME}/.config/mpv
 	ln -s ${HOME}/dotfiles/mpv.conf ${HOME}/.config/mpv/mpv.conf
+	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -32,3 +33,4 @@ clean:
 	rm -rf ${HOME}/.config/pip/pip.conf
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
 	rm -rf ${HOME}/.config/mpv/mpv.conf
+	rm -rf ${HOME}/.stack/config.yaml

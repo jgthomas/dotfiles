@@ -2,9 +2,6 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible
 
-" Load plugins
-call pathogen#infect()
-
 " Switch on syntax highlighting
 syntax on
 
@@ -44,16 +41,8 @@ set showmatch
 noremap <C-Y> "+y
 noremap <C-P> "+p
 
-" Built-in file browser settings
-let g:netrw_banner = 0 "disable the useless header
-"let g:netrw_liststyle = 3 "default to tree-style list of files
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25 "only use this percentage of the screen
-" Start file browser automatically on the left
-"augroup ProjectDrawer
-"        autocmd!
-"        autocmd VimEnter * :Vexplore
-"augroup end
+" Open nerdtree browser
+map <C-n> :NERDTreeToggle<CR>
 
 " Reload vimrc on \r
 map <leader>s :source ~/.vimrc<CR>
@@ -122,20 +111,6 @@ set incsearch " Live incremental search
 set hlsearch " highlight search terms
 " Clear previous search highlight
 nmap <silent> ,/ :nohlsearch<CR>
-
-" Show statusline
-set laststatus=2
-" Show current mode
-set showmode " Show insert, visual or replace mode in status
-" Custom statusline
-set statusline=
-set statusline+=\ %F%m%r%h%w " Show filename and path
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%% " Percentage through file
-set statusline+=\ %l\ %c " Line and character
 
 " History and undo
 set history=1000

@@ -38,8 +38,8 @@ set autowrite
 set showmatch
 
 " Allow access to main graphical clipboard
-noremap <C-Y> "+y
-noremap <C-P> "+p
+noremap <C-y> "+y
+noremap <C-p> "+p
 
 " Open nerdtree browser
 map <C-n> :NERDTreeToggle<CR>

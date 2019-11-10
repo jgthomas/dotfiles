@@ -66,6 +66,12 @@ GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 
 
+## HASKELL
+
+# add path for Stack-built executables
+PATH=$PATH:$HOME/.local/bin
+
+
 ## HISTORY
 
 # Show time command in history used

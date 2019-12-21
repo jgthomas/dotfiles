@@ -75,6 +75,12 @@ au BufEnter * :syntax sync fromstart
 " Delete whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" HASKELL
+let g:hs_highlight_boolean    = 1
+let g:hs_highlight_types      = 1
+let g:hs_highlight_more_types = 1
+let g:hs_highlight_delimiters = 1
+
 " Set a swap and backup location for all files
 set directory=/home/james/.vim/swapfiles/
 set backupdir=/home/james/.vim/backup/

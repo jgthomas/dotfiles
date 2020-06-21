@@ -37,6 +37,10 @@ export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\]
 # Add my packages to python path
 export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses
 
+# Set virtualenv path - create non-project envs for aws-eb-cli
+export WORKON_HOME=${HOME}/Code/VirtualEnvs
+source /usr/bin/virtualenvwrapper.sh
+
 
 ## RUBY
 export GEM_HOME=${HOME}/.gem

@@ -68,6 +68,14 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.local/bin
 
 
+## DOCKER
+
+# stop all running containers
+alias docstop='docker stop $(docker ps -a -q)'
+# delete all containers
+alias docdel='docker rm $(docker ps -a -q)'
+
+
 ## HISTORY
 
 # Show time command in history used

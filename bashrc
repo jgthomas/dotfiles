@@ -127,6 +127,9 @@ alias pubcv="rclone copy CV.pdf my_dropbox:"
 # Check wifi strength
 alias wifipow="watch -n 1 cat /proc/net/wireless"
 
+# Run last command as sudo
+alias redo='sudo $(history -p !!)'
+
 
 ## FUNCTIONS
 

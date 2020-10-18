@@ -34,6 +34,9 @@ set hidden
 " Autosave changes when switching buffers
 set autowrite
 
+" Re-load file if it changed outside of Vim
+set autoread
+
 " Show matching parentheses on selecting other
 set showmatch
 

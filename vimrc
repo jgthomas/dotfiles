@@ -84,6 +84,9 @@ let g:hs_highlight_types      = 1
 let g:hs_highlight_more_types = 1
 let g:hs_highlight_delimiters = 1
 
+" Locate sandbox ormolu formatter
+let g:ormolu_command=trim(system("stack exec -- which ormolu"))
+
 " Set a swap and backup location for all files
 set directory=/home/james/.vim/swapfiles/
 set backupdir=/home/james/.vim/backup/

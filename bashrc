@@ -325,6 +325,11 @@ repo_nongroup() {
         comm -23 <(repopkgs "$1" | sort) <(pacman -Qqg base base-devel xorg | sort)
 }
 
+# Nicer hoggle search
+hoogle() {
+        stack exec -- hoogle "$1"
+}
+
 
 ## SOURCE
 

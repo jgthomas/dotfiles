@@ -17,6 +17,7 @@ all: clean
 	mkdir -p ${HOME}/.config/mpv
 	ln -s ${HOME}/dotfiles/mpv.conf ${HOME}/.config/mpv/mpv.conf
 	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
+	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -30,6 +31,7 @@ clean:
 	rm -rf ${HOME}/.bash_profile
 	rm -rf ${HOME}/.inputrc
 	rm -rf ${HOME}/.pdbrc.py
+	rm -rf ${HOME}/.ghci
 	rm -rf ${HOME}/.config/pip/pip.conf
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
 	rm -rf ${HOME}/.config/mpv/mpv.conf

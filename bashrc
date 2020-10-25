@@ -330,6 +330,10 @@ hoogle() {
         stack exec -- hoogle "$1"
 }
 
+doc() {
+        stack exec -- hoogle --info "$1"
+}
+
 
 ## SOURCE
 

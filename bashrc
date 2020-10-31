@@ -31,6 +31,9 @@ fi
 # Set prompt
 export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+
 
 ## PYTHON
 

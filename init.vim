@@ -12,6 +12,7 @@ Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

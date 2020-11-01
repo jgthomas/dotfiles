@@ -18,6 +18,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/mpv.conf ${HOME}/.config/mpv/mpv.conf
 	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
 	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
+	ln -s ${HOME}/dotfiles/init.vim ${HOME}/.config/nvim/init.vim
 
 clean:
 	rm -rf ${HOME}/.vimrc

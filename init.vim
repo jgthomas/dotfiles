@@ -45,6 +45,9 @@ set showmatch
 " Use main clipboard
 set clipboard+=unnamed
 
+" Use True Color
+set termguicolors
+
 " NERDTREE
 
 " Open nerdtree browser

@@ -4,7 +4,7 @@ set nocompatible
 
 call plug#begin()
 
-Plug 'danilo-augusto/vim-afterglow'
+Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
@@ -16,7 +16,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Set theme
-colorscheme afterglow
+colorscheme sonokai
 
 " Allow recursive search into subdirectories
 " when using :find

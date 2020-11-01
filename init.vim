@@ -48,6 +48,9 @@ set clipboard+=unnamed
 " Use True Color
 set termguicolors
 
+" Set the leader key to space
+let mapleader=" "
+
 " NERDTREE
 
 " Open nerdtree browser

@@ -31,10 +31,6 @@ set path+=**
 " Tab-based autocomplete below words
 set wildmode=longest,list,full
 
-" Display all matching files in status bar on tab
-" start with :b to search buffers
-set wildmenu
-
 "Ignore certain files and directories
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=*.pdf
@@ -46,9 +42,6 @@ set hidden
 
 " Autosave changes when switching buffers
 set autowrite
-
-" Re-load file if it changed outside of Vim
-set autoread
 
 " Show matching parentheses on selecting other
 set showmatch
@@ -97,8 +90,8 @@ set tabstop=4 " Displays TAB characters as 4 spaces
 set softtabstop=4 " Insert 4 spaces when TAB is pressed
 set expandtab " Turns TAB key into shortcut for 4 spaces
 
-" Enable some indenting tweaks
-set autoindent " Match previous indent on new line
+" Match previous indent on new line
+set autoindent
 
 " Set character encoding
 set encoding=utf-8 " The encoding displayed on screen
@@ -117,16 +110,14 @@ set relativenumber
 " shows a line at 80 characters and solid block from 110 onwards
 let &colorcolumn="80,".join(range(110,999),",")
 
-" Some tweaks for searching
-set smartcase " If there are upper-case letters become case-sensitive
-set incsearch " Live incremental search
-set hlsearch " highlight search terms
+" If there are upper-case letters become case-sensitive
+set smartcase
+
 " Clear previous search highlight
 nmap <silent> ,/ :nohlsearch<CR>
 
 " History and undo
-set history=1000
-set undolevels=1000
+set undolevels=10000
 
 " Toggle auto indent to allow well formatted pasting
 set pastetoggle=<F2>

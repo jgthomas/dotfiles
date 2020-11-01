@@ -71,7 +71,7 @@ function! OpenTerminal()
   split term://bash
   resize 10
 endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <c-m> :call OpenTerminal()<CR>
 
 " FZF
 

@@ -15,12 +15,6 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-" Switch on syntax highlighting
-syntax on
-
-" Enable file type detection and do language-dependent indenting
-filetype plugin indent on
-
 " Set theme
 colorscheme afterglow
 
@@ -94,12 +88,7 @@ set expandtab " Turns TAB key into shortcut for 4 spaces
 set autoindent
 
 " Set character encoding
-set encoding=utf-8 " The encoding displayed on screen
 set fileencoding=utf-8 " The encoding written to files
-
-" Stop beeps on cursor errors
-set visualbell
-set noerrorbells
 
 " Turn line numbering on
 set number
@@ -139,6 +128,3 @@ else
         let &t_SR = "\e[4 q"  " Underline in replace
         let &t_EI = "\e[2 q"  " Block in normal mode
 endif
-
-" Make backspace like in other programs in insert mode
-set backspace=indent,eol,start

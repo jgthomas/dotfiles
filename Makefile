@@ -37,3 +37,4 @@ clean:
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
 	rm -rf ${HOME}/.config/mpv/mpv.conf
 	rm -rf ${HOME}/.stack/config.yaml
+	rm -rf ${HOME}/.config/nvim/init.vim

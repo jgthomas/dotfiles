@@ -42,9 +42,8 @@ set autowrite
 " Show matching parentheses on selecting other
 set showmatch
 
-" Allow access to main graphical clipboard
-noremap <C-y> "+y
-noremap <C-p> "+p
+" Use main clipboard
+set clipboard+=unnamed
 
 " NERDTREE
 

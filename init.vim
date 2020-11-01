@@ -12,6 +12,7 @@ Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -44,8 +45,18 @@ set showmatch
 noremap <C-y> "+y
 noremap <C-p> "+p
 
+" NERDTREE
+
 " Open nerdtree browser
 map <C-n> :NERDTreeToggle<CR>
+
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Reload vimrc on \r
 map <leader>s :source ~/.vimrc<CR>

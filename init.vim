@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -18,7 +19,6 @@ syntax on
 
 " Set theme
 colorscheme afterglow
-"let g:SnazzyTransparent = 1
 
 " Allow recursive search into subdirectories
 " when using :find

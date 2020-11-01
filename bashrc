@@ -4,8 +4,8 @@
 [[ $- != *i* ]] && return
 
 # Set the default editors
-export EDITOR="/usr/bin/vim"
-export VISUAL="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 
 shopt -s checkwinsize # Resize text with resized window
 shopt -s extglob      # Allow more advanced pattern matching
@@ -145,6 +145,9 @@ alias wifipow="watch -n 1 cat /proc/net/wireless"
 # Run last command as sudo
 alias redo='sudo $(history -p !!)'
 
+# Use neovim
+alias vi="nvim"
+alias vim="nvim"
 
 ## FUNCTIONS
 

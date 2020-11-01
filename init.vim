@@ -49,7 +49,7 @@ set clipboard+=unnamed
 set termguicolors
 
 " Set the leader key to space
-let mapleader=" "
+let mapleader="\<Space>"
 
 " NERDTREE
 

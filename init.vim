@@ -93,8 +93,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 let g:ormolu_command=trim(system("stack exec -- which ormolu"))
 
 " Set a swap and backup location for all files
-set directory=/home/james/.vim/swapfiles/
-set backupdir=/home/james/.vim/backup/
+set directory=/home/james/.config/nvim/swapfiles/
+set backupdir=/home/james/.config/nvim/backup/
 
 " Tabs and spaces
 set tabstop=4 " Displays TAB characters as 4 spaces

@@ -121,7 +121,6 @@ set relativenumber
 let &colorcolumn="80,".join(range(110,999),",")
 
 " Some tweaks for searching
-"set ignorecase " Enable case-insensitive search
 set smartcase " If there are upper-case letters become case-sensitive
 set incsearch " Live incremental search
 set hlsearch " highlight search terms

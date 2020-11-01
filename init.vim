@@ -10,9 +10,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
+Plug 'troydm/zoomwintab.vim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

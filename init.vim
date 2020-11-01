@@ -18,6 +18,9 @@ call plug#end()
 " Switch on syntax highlighting
 syntax on
 
+" Enable file type detection and do language-dependent indenting
+filetype plugin indent on
+
 " Set theme
 colorscheme afterglow
 
@@ -60,9 +63,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Reload vimrc on \r
 map <leader>s :source ~/.vimrc<CR>
 
-" Enable file type detection and do language-dependent indenting
-filetype plugin indent on
-
 " Filetype-specific settings for indentation
 autocmd FileType javascript setlocal expandtab tabstop=4 sw=4 softtabstop=4
 autocmd FileType html setlocal expandtab tabstop=2 sw=2 softtabstop=2
@@ -91,10 +91,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " HASKELL
 " Locate sandbox ormolu formatter
 let g:ormolu_command=trim(system("stack exec -- which ormolu"))
-
-" Set a swap and backup location for all files
-set directory=/home/james/.config/nvim/swapfiles/
-set backupdir=/home/james/.config/nvim/backup/
 
 " Tabs and spaces
 set tabstop=4 " Displays TAB characters as 4 spaces

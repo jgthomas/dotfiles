@@ -183,16 +183,16 @@ function! StatuslineGit()
 endfunction
 
 " Statusline
-set laststatus=2 " Always show
+set laststatus=2 " always show
 set statusline=
-set statusline+=%#Cursor# " Colour for git branch
-set statusline+=%{StatuslineGit()} " Show current git branch
-set statusline+=%#CursorColumn# " Colour for rest of bar
-set statusline+=\ %n " Show buffer number
-set statusline+=\ %t " Show filename
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " File encoding
-set statusline+=\[%{&fileformat}\] " Language file type
-set statusline+=\ %p%% " Percentage through file
-set statusline+=\ %l\ %c " Line and character
+set statusline+=%#Cursor# " colour
+set statusline+=%{StatuslineGit()} " current git branch
+set statusline+=%#CursorColumn# " colour
+set statusline+=\ %n " buffer number
+set statusline+=\ %t " filename
+set statusline+=%= " right align
+set statusline+=\ %y\ " file type
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\ " file encoding
+set statusline+=%#Cursor# " Colour
+set statusline+=\ %3l:%-2c " Line and character
+set statusline+=\ %3p%%\ " Percentage through file

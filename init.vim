@@ -190,8 +190,8 @@ set statusline+=%#CursorColumn# " colour
 set statusline+=\ %n " buffer number
 set statusline+=\ %t " filename
 set statusline+=%= " right align
-set statusline+=\ %y\ " file type
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\ " file encoding
+set statusline+=\ %y\  " file type
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\  " file encoding
 set statusline+=%#Cursor# " Colour
 set statusline+=\ %3l:%-2c " Line and character
 set statusline+=\ %3p%%\ " Percentage through file

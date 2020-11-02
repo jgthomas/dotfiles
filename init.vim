@@ -181,17 +181,23 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
+" Statusline colour definitions
+hi WhiteHighlight guifg=Black guibg=White ctermfg=Black ctermbg=White
+hi GrayHighlight guifg=Black guibg=DarkGray ctermfg=Black ctermbg=DarkGray
+hi BlackHighlight guifg=Black guibg=LightGray ctermfg=Black ctermbg=LightGray
+
 " Statusline
 set laststatus=2 " always show
-set statusline=
-set statusline+=%#Cursor# " colour
+set statusline= " begin content
+set statusline+=%#WhiteHighlight# " colour
 set statusline+=%{StatuslineGit()} " current git branch
+set statusline+=%#GrayHighlight# " colour
+set statusline+=\ %2n\  " buffer number
 set statusline+=%#CursorColumn# " colour
-set statusline+=\ %n " buffer number
 set statusline+=\ %t " filename
 set statusline+=%= " right align
 set statusline+=\ %y\  " file type
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\  " file encoding
-set statusline+=%#Cursor# " Colour
+set statusline+=%#WhiteHighlight# " colour
 set statusline+=\ %3l:%-2c " Line and character
 set statusline+=\ %3p%%\  " percentage through file

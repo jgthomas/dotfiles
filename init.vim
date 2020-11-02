@@ -6,7 +6,6 @@ call plug#begin()
 
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
-"Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'

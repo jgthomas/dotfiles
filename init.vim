@@ -7,12 +7,7 @@ call plug#begin()
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
-Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'
-Plug 'troydm/zoomwintab.vim'
-Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

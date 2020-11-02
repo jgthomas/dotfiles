@@ -6,7 +6,7 @@ call plug#begin()
 
 Plug 'sainnhe/sonokai'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'sdiehl/vim-ormolu'
@@ -172,3 +172,27 @@ else
         let &t_SR = "\e[4 q"  " Underline in replace
         let &t_EI = "\e[2 q"  " Block in normal mode
 endif
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+" Statusline
+set laststatus=2 " Always show
+set statusline=
+set statusline+=%#Cursor# " Colour for git branch
+set statusline+=%{StatuslineGit()} " Show current git branch
+set statusline+=%#CursorColumn# " Colour for rest of bar
+set statusline+=\ %n " Show buffer number
+set statusline+=\ %t " Show filename
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding} " File encoding
+set statusline+=\[%{&fileformat}\] " Language file type
+set statusline+=\ %p%% " Percentage through file
+set statusline+=\ %l\ %c " Line and character

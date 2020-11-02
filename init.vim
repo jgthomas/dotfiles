@@ -45,19 +45,6 @@ set termguicolors
 " Set the leader key to space
 let mapleader="\<Space>"
 
-" NERDTREE
-
-" Open nerdtree browser
-map <C-n> :NERDTreeToggle<CR>
-
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " BUILT IN TERMINAL
 " open new split panes to right and below
 set splitright

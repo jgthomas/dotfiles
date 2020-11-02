@@ -194,4 +194,4 @@ set statusline+=\ %y\  " file type
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\  " file encoding
 set statusline+=%#Cursor# " Colour
 set statusline+=\ %3l:%-2c " Line and character
-set statusline+=\ %3p%%\ " Percentage through file
+set statusline+=\ %3p%%\  " percentage through file

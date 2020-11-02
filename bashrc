@@ -33,7 +33,7 @@ export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\]
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g '${FZF_IGNORE}
-FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*}"'
+FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*,.idea/*,target/*,build/*}"'
 
 
 ## PYTHON

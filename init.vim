@@ -92,7 +92,7 @@ let g:fzf_action = {
   \}
 
 " Reload vimrc on \r
-map <leader>s :source ~/.vimrc<CR>
+map <leader>s :source ~/.config/nvim/init.vim<CR>
 
 " Filetype-specific settings for indentation
 autocmd FileType javascript setlocal expandtab tabstop=4 sw=4 softtabstop=4

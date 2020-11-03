@@ -25,7 +25,7 @@ set wildmode=longest,list,full
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=*.pdf
 set wildignore+=*/node_modules/*,*/__pycache__/*
-set wildignore+=*.class
+set wildignore+=*.class,*.hie
 
 " Keep more info in memory to speed things
 set hidden

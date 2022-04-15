@@ -173,3 +173,4 @@ src/macos/dist*
 .shake/
 config.platform
 ghc-*.tar.xz
+.vscode/**/*

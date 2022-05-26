@@ -154,7 +154,7 @@ alias vim="nvim"
 
 # Control VPN connection
 wgvpn() {
-        default="switzerland"
+        default="protonVPN"
         usage="wgvpn start|stop|status [country], defaults to *"$default"*"
 
         [[ $# -eq 2 ]] && country=$2 || country=$default

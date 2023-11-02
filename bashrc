@@ -113,7 +113,7 @@ alias df='df -h'
 alias du='du -h'
 
 # Highlight grepped terms
-export GREP_COLOR="1;34"
+export GREP_COLORS="mt=1;34"
 alias grep='grep --color=auto'
 
 # Colour output of ip

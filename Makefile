@@ -19,6 +19,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
 	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
 	ln -s ${HOME}/dotfiles/init.vim ${HOME}/.config/nvim/init.vim
+	ln -s ${HOME}/dotfiles/gowayland.sh ${HOME}/gowayland.sh
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -38,3 +39,4 @@ clean:
 	rm -rf ${HOME}/.config/mpv/mpv.conf
 	rm -rf ${HOME}/.stack/config.yaml
 	rm -rf ${HOME}/.config/nvim/init.vim
+	rm -rf ${HOME}/gowayland.sh

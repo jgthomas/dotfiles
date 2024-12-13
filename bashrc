@@ -134,6 +134,9 @@ if [[ -f ${HOME}/.credentials ]]; then
         alias rsdncmd='ssh $RSYNC_DOT_NET_USER@$RSYNC_DOT_NET_DOMAIN'
 fi
 
+# List available AUR upgrades
+alias aur_check="aur repo -d aur_packages -u"
+
 # Update AUR packages
 alias aur_update="aur sync -d aur_packages -u"
 

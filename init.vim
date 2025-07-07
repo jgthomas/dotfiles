@@ -133,9 +133,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 " History and undo
 set undolevels=10000
 
-" Toggle auto indent to allow well formatted pasting
-set pastetoggle=<F2>
-
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j

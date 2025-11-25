@@ -4,6 +4,9 @@
 # Unignore all with extensions
 !*.*
 
+!Dockerfile
+!dockerfile
+
 # Unignore all dirs
 !*/
 
@@ -26,7 +29,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/

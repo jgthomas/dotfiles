@@ -6,6 +6,7 @@
 
 !Dockerfile
 !dockerfile
+!Makefile
 
 # Unignore all dirs
 !*/

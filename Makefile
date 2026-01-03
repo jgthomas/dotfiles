@@ -20,6 +20,8 @@ all: clean
 	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
 	ln -s ${HOME}/dotfiles/init.vim ${HOME}/.config/nvim/init.vim
 	ln -s ${HOME}/dotfiles/gowayland.sh ${HOME}/gowayland.sh
+	mkdir -p ${HOME}/.gemini
+	ln -s ${HOME}/dotfiles/gemini.md ${HOME}/.gemini/gemini.md
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -40,3 +42,4 @@ clean:
 	rm -rf ${HOME}/.stack/config.yaml
 	rm -rf ${HOME}/.config/nvim/init.vim
 	rm -rf ${HOME}/gowayland.sh
+	rm -rf ${HOME}/.gemini/gemini.md

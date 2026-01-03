@@ -41,3 +41,9 @@ This document outlines the core principles that should guide the Gemini agent's 
 9.  **Performance Awareness:**
     *   **Principle:** Be mindful of performance, but avoid premature optimization. For backend code, ensure database queries are efficient (using indexes, avoiding N+1 problems). For frontend code, be conscious of bundle size and rendering performance.
     *   **Why:** A performant application provides a better user experience and can reduce infrastructure costs. Considering performance during development can prevent major refactoring efforts later on.
+
+## Misc
+
+10. **Explain Deviations:**
+    *   **Principle:** If you find it necessary to deviate from a specific instruction in this document or a user request (e.g., due to conflicts with existing code patterns or technical constraints), explicitly state the deviation and explain the reasoning behind it before proceeding.
+    *   **Why:** Transparency ensures the user understands the decision-making process and can correct course if the deviation is not desired. It prevents "silent failures" where instructions are ignored without notice.

@@ -48,8 +48,8 @@ You MUST follow this cycle for every task:
 
 1. **Phase 1: Planning**
    - Research the codebase to identify all affected files.
-   - Propose a step-by-step plan.
-   - **Stop and wait for user approval** before writing any code.
+   - **Present a detailed step-by-step plan** to the user in your response.
+   - **Stop and wait for user approval** of the plan before writing any code or modifying files.
 
 2. **Phase 2: Implementation**
    - Once approved, apply changes incrementally.

@@ -42,6 +42,27 @@ This document outlines the core principles that should guide the Gemini agent's 
     *   **Principle:** Be mindful of performance, but avoid premature optimization. For backend code, ensure database queries are efficient (using indexes, avoiding N+1 problems). For frontend code, be conscious of bundle size and rendering performance.
     *   **Why:** A performant application provides a better user experience and can reduce infrastructure costs. Considering performance during development can prevent major refactoring efforts later on.
 
+## Development Workflow
+
+You MUST follow this cycle for every task:
+
+1. **Phase 1: Planning**
+   - Research the codebase to identify all affected files.
+   - Propose a step-by-step plan.
+   - **Stop and wait for user approval** before writing any code.
+
+2. **Phase 2: Implementation**
+   - Once approved, apply changes incrementally.
+   - If a change is complex, use `/checkpoint save` before proceeding.
+   - Ensure all code adheres to the style guide defined in this file.
+
+3. **Phase 3: Testing & Quality**
+   - After coding, you MUST run the project's test and quality suite (e.g., unit tests, linting, type-checking).
+   - Refer to the project-specific `gemini.md` or README to identify the exact commands.
+   - **If you cannot find the test/quality suite or are unsure how to run it, you MUST ask the user for the correct commands.**
+   - If tests fail, analyze the logs, propose a fix, and loop back to Phase 2.
+   - Do not consider a task "Done" until all tests and quality checks pass.
+
 ## Misc
 
 10. **Explain Deviations:**

@@ -52,7 +52,8 @@ You MUST follow this cycle for every task:
    - **Stop and wait for user approval** of the plan before writing any code or modifying files.
 
 2. **Phase 2: Implementation**
-   - Once approved, apply changes incrementally.
+   - Once approved, **create and switch to a new feature branch** for the task (e.g., `git checkout -b feat/short-description`).
+   - Apply changes incrementally on this branch.
    - If a change is complex, use `/checkpoint save` before proceeding.
    - Ensure all code adheres to the style guide defined in this file.
 

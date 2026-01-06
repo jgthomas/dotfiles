@@ -69,3 +69,46 @@ You MUST follow this cycle for every task:
 10. **Explain Deviations:**
     *   **Principle:** If you find it necessary to deviate from a specific instruction in this document or a user request (e.g., due to conflicts with existing code patterns or technical constraints), explicitly state the deviation and explain the reasoning behind it before proceeding.
     *   **Why:** Transparency ensures the user understands the decision-making process and can correct course if the deviation is not desired. It prevents "silent failures" where instructions are ignored without notice.
+
+
+## Standard Git Flow (Standard Agent Protocol)
+
+Automatic Detection: If you detect a .git folder in the current directory, you MUST automatically apply this protocol unless the local GEMINI.md explicitly overrides it.
+
+When performing git operations, adhere to the following branching and lifecycle strategy:
+
+    Branching: Always branch off the develop branch. NEVER branch off main or master unless specifically instructed.
+
+    The "Clean State" Requirement:
+
+        NEVER create a new branch or switch branches if the current environment is "dirty."
+
+        Mandatory Check: Before branching or switching, run ! git status --porcelain.
+
+        Evaluation: * If the output is empty, the state is clean; you may proceed.
+
+            If the output is not empty, the state is dirty. You must stop immediately, display the untracked/modified files, and ask me to stash, commit, or discard the changes before you proceed.
+
+    Feature Initialization:
+
+        Once the state is verified as clean, switch to develop and pull the latest changes: ! git checkout develop && git pull origin develop.
+
+        Create your feature branch from this fresh develop state using a descriptive name (e.g., feature/login-validation).
+
+    The "Local" Work Loop:
+
+        Perform all work, commits, and tests on this local feature branch.
+
+        Use small, logical commits as you progress through the Plan-Implement-Test cycle.
+
+    Remote Integration:
+
+        Once the task is complete and tests pass, push the feature branch to the remote repository: ! git push origin <branch-name>.
+
+    Strict Merge Boundaries:
+
+        NEVER merge the feature branch into develop or main.
+
+        NEVER use git merge or git rebase to combine your work with the base branches.
+
+        Your final step is to provide a Handoff Summary (branch name, list of files changed, and a brief summary of the work) for human review and manual merging.

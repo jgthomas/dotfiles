@@ -103,7 +103,7 @@ When performing git operations, adhere to the following branching and lifecycle 
 
     Remote Integration:
 
-        Once the task is complete and tests pass, push the feature branch to the remote repository: ! git push origin <branch-name>.
+        Once the task is complete and tests pass, push the feature branch to the remote repository: ! git push --set-upstream origin <branch-name>.
 
     Strict Merge Boundaries:
 

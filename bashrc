@@ -84,6 +84,10 @@ alias docstop='docker stop $(docker ps -a -q)'
 alias docdel='docker rm $(docker ps -a -q)'
 
 
+## Gemini CLI
+alias gemini='firejail --quiet --profile=~/.config/firejail/gemini.profile gemini --no-sandbox'
+
+
 ## HISTORY
 
 # Show time command in history used

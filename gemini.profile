@@ -14,6 +14,7 @@ whitelist ${HOME}/dotfiles
 noblacklist /usr/bin/node
 noblacklist /usr/local/bin/node
 noblacklist /usr/bin/npm
+noblacklist /usr/bin/make
 
 # Restrict everything else
 include disable-common.inc

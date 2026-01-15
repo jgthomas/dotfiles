@@ -1,34 +1,47 @@
-# Save as ~/.config/firejail/gemini.profile
+# Firejail profile for gemini CLI
+
+# --- HOME DIRECTORY ---
 noblacklist ${HOME}/.gemini
+noblacklist ${HOME}/.npm
+noblacklist ${HOME}/.config
+noblacklist ${HOME}/.nvm
 whitelist ${HOME}/.gemini
-
-# Ignore Docker artifacts and system admin paths
-ignore blacklist /var/lib/docker
-ignore blacklist /sbin
-ignore blacklist /usr/sbin
-
-# Allow access to your code projects (Change this path!)
+whitelist ${HOME}/.npm
+whitelist ${HOME}/.config/npm
+whitelist ${HOME}/.nvm
 whitelist ${HOME}/Code
 whitelist ${HOME}/dotfiles
+include whitelist-common.inc # Enforces home whitelist only
 
-noblacklist /usr/bin/node
-noblacklist /usr/local/bin/node
-noblacklist /usr/bin/npm
-noblacklist /usr/bin/make
+# --- SYSTEM ACCESS ---
+include whitelist-run-common.inc
+include whitelist-var-common.inc
 
-# Restrict everything else
-include disable-common.inc
-include disable-devel.inc
-include disable-interpreters.inc
-include disable-programs.inc
+# --- NETWORK & DNS ---
+whitelist /etc/ssl
+whitelist /etc/ca-certificates
+whitelist /etc/resolv.conf
+whitelist /etc/hosts
+whitelist /etc/passwd
+whitelist /etc/group
 
-# All these stay the same
+# --- SECURITY HARDENING ---
+apparmor
 caps.drop all
 netfilter
 nodvd
-nogroups
 nonewprivs
 noroot
 nosound
 notv
 novideo
+protocol unix,inet,inet6
+seccomp
+
+# --- PRIVATE DIRECTORIES ---
+private-cache
+private-dev
+private-tmp
+
+# --- DISABLE UNNECESSARY FEATURES ---
+disable-mnt

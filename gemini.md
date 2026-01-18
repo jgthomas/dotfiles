@@ -71,6 +71,10 @@ You MUST follow this cycle for every task:
     *   **Why:** Transparency ensures the user understands the decision-making process and can correct course if the deviation is not desired. It prevents "silent failures" where instructions are ignored without notice.
 
 
+## Gemini Added Memories
+Strictly follow the Git Flow defined in below. This includes always branching off 'develop' (checking for clean state first) and never working directly on 'develop' or 'main'.
+
+
 ## Standard Git Flow (Standard Agent Protocol)
 
 Automatic Detection: If you detect a .git folder in the current directory, you MUST automatically apply this protocol unless the local GEMINI.md explicitly overrides it.

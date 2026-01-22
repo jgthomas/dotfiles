@@ -85,7 +85,7 @@ alias docdel='docker rm $(docker ps -a -q)'
 
 
 ## Gemini CLI
-alias gemini='firejail --quiet --profile=~/.config/firejail/gemini.profile gemini --no-sandbox'
+alias gemini='firejail --quiet --profile=~/.config/firejail/gemini.profile /usr/bin/gemini --no-sandbox'
 
 
 ## HISTORY

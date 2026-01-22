@@ -24,6 +24,9 @@ all: clean
 	ln -s ${HOME}/dotfiles/gemini.md ${HOME}/.gemini/gemini.md
 	mkdir -p ${HOME}/.config/firejail
 	ln -s ${HOME}/dotfiles/gemini.profile ${HOME}/.config/firejail/gemini.profile
+	mkdir -p ${HOME}/.local/bin
+	cp gemini ${HOME}/.local/bin/gemini
+	chmod +x ${HOME}/.local/bin/gemini
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -46,3 +49,4 @@ clean:
 	rm -rf ${HOME}/gowayland.sh
 	rm -rf ${HOME}/.gemini/gemini.md
 	rm -rf ${HOME}/.config/firejail/gemini.profile
+	rm -rf ${HOME}/.local/bin/gemini

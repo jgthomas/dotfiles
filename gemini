@@ -1,0 +1,7 @@
+#!/bin/bash
+# 1. We use the absolute path to /usr/bin/gemini to bypass NVM shadowing
+# 2. We use your specific firejail profile
+# 3. --no-sandbox tells Gemini CLI not to try nesting Docker/gVisor inside Firejail
+# 4. "$@" passes all your CLI arguments (like 'gemini chat') into the jail
+
+exec firejail --quiet --profile=~/.config/firejail/gemini.profile /usr/bin/gemini --no-sandbox "$@"

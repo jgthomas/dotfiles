@@ -363,4 +363,6 @@ source /usr/share/nvm/init-nvm.sh
 # Add this to front of PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-fastfetch
+if [[ -z "$SSH_TTY" ]]; then
+    fastfetch
+fi

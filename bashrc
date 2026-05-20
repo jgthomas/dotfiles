@@ -42,8 +42,8 @@ FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*,.idea/*,target/*,build/*}"'
 export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses
 
 # Set virtualenv path - create non-project envs for aws-eb-cli
-export WORKON_HOME=${HOME}/Code/VirtualEnvs
-source /usr/bin/virtualenvwrapper.sh
+#export WORKON_HOME=${HOME}/Code/VirtualEnvs
+#source /usr/bin/virtualenvwrapper.sh
 
 
 ## RUBY

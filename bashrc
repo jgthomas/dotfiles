@@ -45,6 +45,9 @@ export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/
 #export WORKON_HOME=${HOME}/Code/VirtualEnvs
 #source /usr/bin/virtualenvwrapper.sh
 
+# fnm (replacement for nvm) -- run fnm -h for options
+eval "$(fnm env --use-on-cd --shell bash)"
+
 
 ## RUBY
 export GEM_HOME=${HOME}/.gem

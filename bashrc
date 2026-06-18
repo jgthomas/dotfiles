@@ -357,12 +357,6 @@ doc() {
 # Machine-specific commands
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
-# Node version manager
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/init-nvm.sh
-
 # Add this to front of PATH
 export PATH="$HOME/.local/bin:$PATH"
 

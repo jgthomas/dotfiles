@@ -159,6 +159,7 @@ alias redo='sudo $(history -p !!)'
 # Use neovim
 alias vi="nvim"
 alias vim="nvim"
+alias vimdiff="nvim -d"
 
 ## FUNCTIONS
 

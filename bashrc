@@ -352,6 +352,25 @@ doc() {
         stack exec -- hoogle --info "$1"
 }
 
+# w3m Shortcuts
+ddg() {
+    if [ -z "$1" ]; then
+        echo "Usage: ddg <search terms>"
+        return 1
+    fi
+    local query=$(echo "$@" | sed 's/ /+/g')
+    w3m "https://lite.duckduckgo.com/lite/?q=${query}"
+}
+
+archwiki() {
+    if [ -z "$1" ]; then
+        w3m "https://wiki.archlinux.org/"
+    else
+        local query=$(echo "$@" | sed 's/ /+/g')
+        w3m "https://wiki.archlinux.org/index.php?search=${query}"
+    fi
+}
+
 
 ## SOURCE
 

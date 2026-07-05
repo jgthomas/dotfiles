@@ -37,7 +37,7 @@ set autowrite
 set showmatch
 
 " Use main clipboard
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 " Use True Color
 set termguicolors

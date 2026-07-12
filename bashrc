@@ -200,7 +200,9 @@ man() {
 }
 
 # Display PATH as vertical list
-path() ( IFS=: ; printf '%s\n' $PATH ; )
+path() {
+    echo "$PATH" | tr ':' '\n'
+}
 
 # cat file to screen and highlight pattern
 cathi() {

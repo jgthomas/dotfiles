@@ -27,6 +27,7 @@ all: clean
 	mkdir -p ${HOME}/.local/bin
 	cp gemini ${HOME}/.local/bin/gemini
 	chmod +x ${HOME}/.local/bin/gemini
+	ln -s ${HOME}/dotfiles/ripgreprc ${HOME}/.ripgreprc
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -50,3 +51,4 @@ clean:
 	rm -rf ${HOME}/.gemini/gemini.md
 	rm -rf ${HOME}/.config/firejail/gemini.profile
 	rm -rf ${HOME}/.local/bin/gemini
+	rm -rf ${HOME}/.ripgreprc

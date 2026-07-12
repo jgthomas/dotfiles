@@ -1,0 +1,16 @@
+# Don't let ripgrep become too noisy
+--smart-case
+--column
+--line-number
+--max-columns=200
+--max-columns-preview
+
+# Ignore specific files and directories
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!target/*
+--glob=!build/*
+--glob=!.stack-work/*
+--glob=!.next/
+--glob=!dist/
+--glob=!coverage/

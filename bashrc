@@ -329,25 +329,29 @@ doc() {
 }
 
 # w3m Shortcuts
-google() {
-        w3m google.com/search?q="$1"
+# Helper for formatting searches
+_format_query() {
+    echo "$*" | sed 's/ /+/g'
 }
 
 ddg() {
-    if [ -z "$1" ]; then
-        echo "Usage: ddg <search terms>"
-        return 1
-    fi
-    local query=$(echo "$@" | sed 's/ /+/g')
-    w3m "https://lite.duckduckgo.com/lite/?q=${query}"
+    [[ -z "$1" ]] && { echo "Usage: ddg <search terms>"; return 1; }
+    w3m "https://lite.duckduckgo.com/lite/?q=$(_format_query "$@")"
 }
 
 archwiki() {
-    if [ -z "$1" ]; then
+    if [[ -z "$1" ]]; then
         w3m "https://wiki.archlinux.org/"
     else
-        local query=$(echo "$@" | sed 's/ /+/g')
-        w3m "https://wiki.archlinux.org/index.php?search=${query}"
+        w3m "https://wiki.archlinux.org/index.php?search=$(_format_query "$@")"
+    fi
+}
+
+wikipedia() {
+    if [[ -z "$1" ]]; then
+        w3m "https://en.wikipedia.org/"
+    else
+        w3m "https://en.wikipedia.org/wiki/Special:Search?search=$(_format_query "$@")"
     fi
 }
 

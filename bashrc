@@ -27,6 +27,14 @@ cat() {
     command bat --paging=never "$@"
 }
 
+# Replace ls with eza
+ls() {
+    # --group-directories-first: Keeps folders at the top
+    # --icons: Adds visual cues (requires a Nerd Font)
+    # --git: Shows git status for files in the listing
+    command eza --group-directories-first --git "$@"
+}
+
 
 ## PROMPT
 
@@ -292,18 +300,18 @@ up() {
 
 # List all directories
 lsdir() {
-        ls -l . | grep '^d'
+    eza -D --group-directories-first --git "$@"
 }
 
 
 # List all files
 lsfile() {
-        ls -l . | grep '^-'
+    eza -f --git "$@"
 }
 
 # List all dotfiles
 lsdot() {
-        ls -a | grep '^\.'
+        eza -a | grep '^\.'
 }
 
 # Set a base dir to return to easily

@@ -15,10 +15,16 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
 ## MODERN COMMAND LINE TOOL REPLACEMENTS
+# use \command to use the orignal
 
 # Replace grep with ripgrep (rg)
 grep() {
     command rg "$@"
+}
+
+# Replace cat with bat
+cat() {
+    command bat --paging=never "$@"
 }
 
 

@@ -32,7 +32,7 @@ ls() {
     # --group-directories-first: Keeps folders at the top
     # --icons: Adds visual cues (requires a Nerd Font)
     # --git: Shows git status for files in the listing
-    command eza --group-directories-first --git "$@"
+    command eza --group-directories-first "$@"
 }
 
 # fzf
@@ -302,11 +302,6 @@ pdfread() {
         lesspipe.sh "$1" | less
 }
 
-# Google search direct from command line
-google() {
-        w3m google.com/search?q="$1"
-}
-
 # Report all explicity installed packages, ignoring dependencies
 # and excluding those in the base, base-devel and xorg groups
 listpkgs() {
@@ -334,6 +329,10 @@ doc() {
 }
 
 # w3m Shortcuts
+google() {
+        w3m google.com/search?q="$1"
+}
+
 ddg() {
     if [ -z "$1" ]; then
         echo "Usage: ddg <search terms>"

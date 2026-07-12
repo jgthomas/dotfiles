@@ -14,6 +14,14 @@ shopt -s extglob      # Allow more advanced pattern matching
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
+## MODERN COMMAND LINE TOOL REPLACEMENTS
+
+# Replace grep with ripgrep (rg)
+grep() {
+    command rg "$@"
+}
+
+
 ## PROMPT
 
 # Get current git branch
@@ -119,9 +127,6 @@ alias ls='ls -h --color=auto'
 alias df='df -h'
 alias du='du -h'
 
-# Highlight grepped terms
-export GREP_COLORS="mt=1;34"
-alias grep='grep --color=auto'
 
 # Colour output of ip
 alias ip='ip -c'
@@ -195,7 +200,7 @@ pkglog() {
                 args=$args"-C"$2
         fi
 
-        grep $args $1 $logfile | less -R
+        grep --color=always $1 $logfile | less -R
 }
 
 # Colour output of man pages
@@ -218,18 +223,13 @@ path() ( IFS=: ; printf '%s\n' $PATH ; )
 
 # cat file to screen and highlight pattern
 cathi() {
-    grep -E "$1|$" $2
+    grep --passthru --color=always "$1" $2
 }
 
 # Search every file in directory for text, displays filename and line no.
 ftext ()
 {
-	# -i case-insensitive
-	# -I ignore binary files
-	# -H causes filename to be printed
-	# -r recursive search
-	# -n causes line number to be printed
-	grep -iIHrn --color=always --exclude-dir='.git' "$1" . | less -r
+	grep "$1" . | less -r
 }
 
 # Extract range or archive files
@@ -286,13 +286,13 @@ up() {
 
 # List all directories
 lsdir() {
-        ls -l . | grep ^d
+        ls -l . | grep '^d'
 }
 
 
 # List all files
 lsfile() {
-        ls -l . | grep ^-
+        ls -l . | grep '^-'
 }
 
 # List all dotfiles
@@ -334,7 +334,7 @@ listpkgs() {
 
 # Report all packages installed from a particular repository
 repopkgs() {
-        pacman -Sl "$1" | grep installed | awk '{print $2}'
+        pacman -Sl "$1" | grep 'installed' | awk '{print $2}'
 }
 
 # Report all packages installed from a named repo that are not

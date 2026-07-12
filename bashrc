@@ -36,8 +36,8 @@ ls() {
 }
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g '${FZF_IGNORE}
 FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*,.idea/*,target/*,build/*}"'
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g '${FZF_IGNORE}
 
 
 ## PROMPT
@@ -144,9 +144,6 @@ alias pubcv="rclone copy CV.pdf my_dropbox:"
 
 # Check wifi strength
 alias wifipow="watch -n 1 cat /proc/net/wireless"
-
-# Run last command as sudo
-alias redo='sudo $(history -p !!)'
 
 # Use neovim
 alias vi="nvim"

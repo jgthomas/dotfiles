@@ -35,6 +35,10 @@ ls() {
     command eza --group-directories-first --git "$@"
 }
 
+# fzf
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g '${FZF_IGNORE}
+FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*,.idea/*,target/*,build/*}"'
+
 
 ## PROMPT
 
@@ -53,50 +57,23 @@ fi
 # Set prompt
 export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-# fzf
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g '${FZF_IGNORE}
-FZF_IGNORE='"!{node_modules/*,.git/*,.stack-work/*,.idea/*,target/*,build/*}"'
 
+## LANGUAGES
 
-## PYTHON
-
+# Python
 # Add my packages to python path
 export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses
 
-# Set virtualenv path - create non-project envs for aws-eb-cli
-#export WORKON_HOME=${HOME}/Code/VirtualEnvs
-#source /usr/bin/virtualenvwrapper.sh
-
+# JavaScript
 # fnm (replacement for nvm) -- run fnm -h for options
 eval "$(fnm env --use-on-cd --shell bash)"
 
-
-## RUBY
-export GEM_HOME=${HOME}/.gem
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-
-
-## JAVA
-
-# Quickly output javadoc to own directory
-alias jdt='javadoc -d docs -html5'
-
-
-## SCHEME
-
-# launch with SICP support
-alias rkt='racket -i -p neil/sicp -l xrepl'
-
-
-## GOLANG
-
+# golang
 # go path
 GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 
-
-## HASKELL
-
+# haskell
 # add path for Stack-built executables
 PATH=$PATH:$HOME/.local/bin
 
@@ -134,13 +111,9 @@ export HISTIGNORE="cd:ls:bg:fg:history:su:exit"
 
 ## ALIASES
 
-# Colour output of ls and make human-readable
-alias ls='ls -h --color=auto'
-
 # Make human-readable the default
 alias df='df -h'
 alias du='du -h'
-
 
 # Colour output of ip
 alias ip='ip -c'
@@ -228,9 +201,6 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
-
-# List contents of directory as you enter
-cd() { builtin cd "$@"; ls; }
 
 # Display PATH as vertical list
 path() ( IFS=: ; printf '%s\n' $PATH ; )

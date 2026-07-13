@@ -19,7 +19,24 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Replace grep with ripgrep (rg)
 grep() {
+    # Run rg, allowing stdout and stderr to pass through normally
     command rg "$@"
+    local status=$?
+
+    case $status in
+        0|1)
+            # 0: Match found
+            # 1: No match found
+            # In both cases, rg did its job correctly; return the result.
+            return "$status"
+            ;;
+        *)
+            # 2: Invalid argument / internal error
+            # Fall back to standard grep
+            command grep --color=auto "$@"
+            return $?
+            ;;
+    esac
 }
 
 # Replace cat with bat
@@ -63,19 +80,6 @@ export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\]
 # Python
 # Add my packages to python path
 export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses
-
-# JavaScript
-# fnm (replacement for nvm) -- run fnm -h for options
-eval "$(fnm env --use-on-cd --shell bash)"
-
-# golang
-# go path
-GOPATH=$HOME/go
-PATH=$PATH:$GOPATH/bin
-
-# haskell
-# add path for Stack-built executables
-PATH=$PATH:$HOME/.local/bin
 
 
 ## DOCKER
@@ -363,9 +367,25 @@ wikipedia() {
 # Machine-specific commands
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
-# Add this to front of PATH
-export PATH="$HOME/.local/bin:$PATH"
+# Add additional locations to PATH
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd --shell bash)"
+fi
 
+REQUIRED_PATHS=(
+    "$HOME/.local/bin"
+    "$HOME/go/bin"
+)
+
+for p in "${REQUIRED_PATHS[@]}"; do
+    if [[ -d "$p" && ":$PATH:" != *":$p:"* ]]; then
+        export PATH="$p:$PATH"
+    fi
+done
+
+export PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: '!arr[$0]++' | sed 's/:$//')
+
+# Show fastfetch if not ssh login
 if [[ -z "$SSH_TTY" ]]; then
     fastfetch
 fi

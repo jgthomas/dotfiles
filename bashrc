@@ -74,14 +74,6 @@ fi
 # Set prompt
 export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-
-## LANGUAGES
-
-# Python
-# Add my packages to python path
-export PYTHONPATH=$PYTHONPATH:${HOME}/Code/Python:${HOME}/Code/PROJECTS:${HOME}/Code/msc_courses
-
-
 ## DOCKER
 
 # stop all running containers

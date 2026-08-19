@@ -211,40 +211,71 @@ ftext ()
 	grep "$1" . | less -r
 }
 
-# Extract range or archive files
+# Extract archive files
 extract() {
-    local c e i
+    if (( $# == 0 )); then
+        printf 'Usage: extract <archive> [archive ...]\n' >&2
+        return 2
+    fi
 
-    (($#)) || return
+    local archive
+    local overall_status=0
+    local -a extract_command
 
-    for i; do
-        c=''
-        e=1
-
-        if [[ ! -r $i ]]; then
-            echo "$0: file is unreadable: \`$i'" >&2
+    for archive in "$@"; do
+        if [[ ! -r $archive ]]; then
+            printf 'extract: cannot read: %s\n' "$archive" >&2
+            overall_status=1
             continue
         fi
 
-        case $i in
-            *.t@(gz|lz|xz|b@(2|z?(2))|a@(z|r?(.@(Z|bz?(2)|gz|lzma|xz)))))
-                   c=(bsdtar xvf);;
-            *.7z)  c=(7z x);;
-            *.Z)   c=(uncompress);;
-            *.bz2) c=(bunzip2);;
-            *.exe) c=(cabextract);;
-            *.gz)  c=(gunzip);;
-            *.rar) c=(unrar x);;
-            *.xz)  c=(unxz);;
-            *.zip) c=(unzip);;
-            *)     echo "$0: unrecognized file extension: \`$i'" >&2
-                   continue;;
+        case "${archive,,}" in
+            *.tar|*.tar.gz|*.tgz|*.tar.bz2|*.tbz|*.tbz2|\
+            *.tar.xz|*.txz|*.tar.lz|*.tlz|*.tar.lzma|\
+            *.tar.zst|*.tzst|*.tar.z|*.taz)
+                extract_command=(bsdtar --extract --verbose --file)
+                ;;
+            *.7z)
+                extract_command=(7z x)
+                ;;
+            *.zip|*.jar|*.war|*.apk)
+                extract_command=(unzip)
+                ;;
+            *.rar)
+                extract_command=(unrar x)
+                ;;
+            *.gz)
+                extract_command=(gunzip)
+                ;;
+            *.bz2)
+                extract_command=(bunzip2)
+                ;;
+            *.xz)
+                extract_command=(unxz)
+                ;;
+            *.zst)
+                extract_command=(unzstd)
+                ;;
+            *.z)
+                extract_command=(uncompress)
+                ;;
+            *.cpio)
+                extract_command=(bsdtar --extract --verbose --file)
+                ;;
+            *)
+                printf 'extract: unsupported archive type: %s\n' "$archive" >&2
+                overall_status=1
+                continue
+                ;;
         esac
 
-        command "${c[@]}" "$i"
-        ((e = e || $?))
+        if ! command "${extract_command[@]}" "$archive"; then
+            printf 'extract: failed to extract: %s\n' "$archive" >&2
+            overall_status=1
+        fi
     done
-    return "$e"
+
+    return "$overall_status"
 }
 
 # Move up a specified number of directory levels

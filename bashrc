@@ -123,10 +123,10 @@ alias du='du -h'
 alias ip='ip -c'
 
 # Find public IP address
-alias getip='wget -qO- http://ipecho.net/plain ; echo'
+alias getip='curl --fail --silent --show-error https://api.ipify.org ; echo'
 
 # Find IP address location
-alias wanip='curl ipinfo.io/$(getip) && echo'
+alias wanip='curl --fail --silent --show-error https://ipinfo.io/json && echo'
 
 # Check current battery state
 alias batt="upower -i $(upower -e | grep 'BAT')"

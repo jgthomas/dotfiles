@@ -15,7 +15,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
 ## MODERN COMMAND LINE TOOL REPLACEMENTS
-# use \command to use the orignal
+# Use command <name> to run the original command (for example, command grep)
 
 # Replace grep with ripgrep (rg)
 grep() {

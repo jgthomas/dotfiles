@@ -121,7 +121,7 @@ alias getip='curl --fail --silent --show-error https://api.ipify.org ; echo'
 alias wanip='curl --fail --silent --show-error https://ipinfo.io/json && echo'
 
 # Check current battery state
-alias batt="upower -i $(upower -e | grep 'BAT')"
+alias batt='upower -i "$(upower -e | command grep BAT)"'
 
 # Run commands on remote backup
 if [[ -f ${HOME}/.credentials ]]; then

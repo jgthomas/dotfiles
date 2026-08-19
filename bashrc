@@ -173,14 +173,26 @@ wgvpn() {
 
 # Search package install history
 pkglog() {
-        logfile="/var/log/pacman.log"
-        args="-a --color=always "
+    if (( $# < 1 || $# > 2 )); then
+        printf 'Usage: pkglog <pattern> [context-lines]\n' >&2
+        return 2
+    fi
 
-        if (($# == 2)); then
-                args=$args"-C"$2
+    local pattern=$1
+    local context_lines=${2:-}
+    local logfile=/var/log/pacman.log
+    local -a grep_options=(--color=always)
+
+    if [[ -n $context_lines ]]; then
+        if [[ ! $context_lines =~ ^[0-9]+$ ]]; then
+            printf 'pkglog: context must be a non-negative integer\n' >&2
+            return 2
         fi
 
-        grep --color=always $1 $logfile | less -R
+        grep_options+=(-C "$context_lines")
+    fi
+
+    grep "${grep_options[@]}" -- "$pattern" "$logfile" | less -R
 }
 
 # Colour output of man pages

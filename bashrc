@@ -6,6 +6,7 @@
 # Set the default editors
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
+export SUDO_EDITOR="/usr/bin/nvim"
 
 shopt -s checkwinsize # Resize text with resized window
 shopt -s extglob      # Allow more advanced pattern matching

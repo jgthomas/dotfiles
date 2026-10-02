@@ -39,18 +39,6 @@ fi
 # Set prompt
 export PS1="\u${host} \[\033[32m\]\w\[\033[36m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-## DOCKER
-
-# stop all running containers
-alias docstop='docker stop $(docker ps -a -q)'
-# delete all containers
-alias docdel='docker rm $(docker ps -a -q)'
-
-
-## Gemini CLI
-alias gemini='firejail --quiet --profile=~/.config/firejail/gemini.profile /usr/bin/gemini --no-sandbox'
-
-
 ## HISTORY
 
 # Show time command in history used
@@ -70,51 +58,12 @@ shopt -s histappend
 export HISTIGNORE="cd:ls:bg:fg:history:su:exit"
 
 
-## ALIASES
-
-# Make human-readable the default
-alias df='df -h'
-alias du='du -h'
-
-# Colour output of ip
-alias ip='ip -c'
-
-# Find public IP address
-alias getip='curl --fail --silent --show-error https://api.ipify.org ; echo'
-
-# Find IP address location
-alias wanip='curl --fail --silent --show-error https://ipinfo.io/json && echo'
-
-# Check current battery state
-alias batt='upower -i "$(upower -e | command grep BAT)"'
-
-# Run commands on remote backup
-if [[ -f ${HOME}/.credentials ]]; then
-        . ${HOME}/.credentials
-        alias rsdncmd='ssh $RSYNC_DOT_NET_USER@$RSYNC_DOT_NET_DOMAIN'
+# Shared shell aliases
+if [[ -f ~/.bash_aliases ]]; then
+    . ~/.bash_aliases
+elif [[ -f ~/dotfiles/bash_aliases ]]; then
+    . ~/dotfiles/bash_aliases
 fi
-
-# List available AUR upgrades
-alias aur_check="aur repo -d aur_packages -u"
-
-# Update AUR packages
-alias aur_update="aur sync -d aur_packages -u"
-
-# Copy CV to dropbox
-alias pubcv="rclone copy CV.pdf my_dropbox:"
-
-# Check wifi strength
-alias wifipow="watch -n 1 cat /proc/net/wireless"
-
-# Use neovim
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-
-## SOURCE
-
-# Machine-specific commands
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 # Add additional locations to PATH
 if command -v fnm &> /dev/null; then

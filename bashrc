@@ -400,6 +400,9 @@ wikipedia() {
 
 ## SOURCE
 
+# Shared shell functions
+[[ -f ~/.bash_functions ]] && . ~/.bash_functions
+
 # Machine-specific commands
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 

@@ -5,6 +5,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/gitconfig ${HOME}/.gitconfig
 	ln -s ${HOME}/dotfiles/tmux.conf ${HOME}/.tmux.conf
 	ln -s ${HOME}/dotfiles/bashrc ${HOME}/.bashrc
+	ln -s ${HOME}/dotfiles/bash_functions ${HOME}/.bash_functions
 	ln -s ${HOME}/dotfiles/Xdefaults ${HOME}/.Xdefaults
 	ln -s ${HOME}/dotfiles/xinitrc ${HOME}/.xinitrc
 	ln -s ${HOME}/dotfiles/bash_profile ${HOME}/.bash_profile
@@ -36,6 +37,7 @@ clean:
 	rm -rf ${HOME}/.gitconfig
 	rm -rf ${HOME}/.tmux.conf
 	rm -rf ${HOME}/.bashrc
+	rm -rf ${HOME}/.bash_functions
 	rm -rf ${HOME}/.Xdefaults
 	rm -rf ${HOME}/.xinitrc
 	rm -rf ${HOME}/.bash_profile

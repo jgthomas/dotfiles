@@ -21,6 +21,7 @@ all: clean
 	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
 	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
 	ln -s ${HOME}/dotfiles/init.vim ${HOME}/.config/nvim/init.vim
+	ln -s ${HOME}/dotfiles/nvim-pack-lock.json ${HOME}/.config/nvim/nvim-pack-lock.json
 	ln -s ${HOME}/dotfiles/gowayland.sh ${HOME}/gowayland.sh
 	mkdir -p ${HOME}/.gemini
 	ln -s ${HOME}/dotfiles/gemini.md ${HOME}/.gemini/gemini.md
@@ -51,6 +52,7 @@ clean:
 	rm -rf ${HOME}/.config/mpv/mpv.conf
 	rm -rf ${HOME}/.stack/config.yaml
 	rm -rf ${HOME}/.config/nvim/init.vim
+	rm -rf ${HOME}/.config/nvim/nvim-pack-lock.json
 	rm -rf ${HOME}/gowayland.sh
 	rm -rf ${HOME}/.gemini/gemini.md
 	rm -rf ${HOME}/.config/firejail/gemini.profile

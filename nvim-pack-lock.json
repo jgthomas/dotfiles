@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "fzf.vim": {
+      "rev": "023de3c0e158ff9c2b0992175af10be97c2f2158",
+      "src": "https://github.com/junegunn/fzf.vim.git"
+    },
+    "sonokai": {
+      "rev": "b023c5280b16fe2366f5e779d8d2756b3e5ee9c3",
+      "src": "https://github.com/sainnhe/sonokai.git"
+    },
+    "vim-ormolu": {
+      "rev": "edbeb0135692345b088182963e9b229fe2235ac0",
+      "src": "https://github.com/sdiehl/vim-ormolu.git"
+    },
+    "vim-polyglot": {
+      "rev": "f061eddb7cdcc614c8406847b2bfb53099832a4e",
+      "src": "https://github.com/sheerun/vim-polyglot.git"
+    }
+  }
+}

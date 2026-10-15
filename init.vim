@@ -2,14 +2,16 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible
 
-call plug#begin()
-
-Plug 'sainnhe/sonokai'
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf.vim'
-Plug 'sdiehl/vim-ormolu'
-
-call plug#end()
+" Built-in plugin management (Neovim 0.12+).
+" Update with :lua vim.pack.update() and review before accepting with :write.
+lua << EOF
+vim.pack.add({
+  'https://github.com/sainnhe/sonokai.git',
+  'https://github.com/sheerun/vim-polyglot.git',
+  'https://github.com/junegunn/fzf.vim.git',
+  'https://github.com/sdiehl/vim-ormolu.git',
+})
+EOF
 
 " Set theme
 colorscheme sonokai

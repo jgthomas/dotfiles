@@ -104,7 +104,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " HASKELL
 " Locate sandbox ormolu formatter
-let g:ormolu_command=trim(system("stack exec -- which ormolu"))
+"let g:ormolu_command=trim(system("stack exec -- which ormolu"))
 
 " Tabs and spaces
 set tabstop=4 " Displays TAB characters as 4 spaces

@@ -18,8 +18,10 @@ all: clean
 	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 	mkdir -p ${HOME}/.config/mpv
 	ln -s ${HOME}/dotfiles/mpv.conf ${HOME}/.config/mpv/mpv.conf
+	mkdir -p ${HOME}/.stack
 	ln -s ${HOME}/dotfiles/config.yaml ${HOME}/.stack/config.yaml
 	ln -s ${HOME}/dotfiles/ghci ${HOME}/.ghci
+	mkdir -p ${HOME}/.config/nvim
 	ln -s ${HOME}/dotfiles/init.vim ${HOME}/.config/nvim/init.vim
 	ln -s ${HOME}/dotfiles/nvim-pack-lock.json ${HOME}/.config/nvim/nvim-pack-lock.json
 	ln -s ${HOME}/dotfiles/gowayland.sh ${HOME}/gowayland.sh

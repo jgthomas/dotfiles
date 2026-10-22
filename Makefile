@@ -14,6 +14,8 @@ all: clean
 	ln -s ${HOME}/dotfiles/pdbrc.py ${HOME}/.pdbrc.py
 	mkdir -p ${HOME}/.config/pip
 	ln -s ${HOME}/dotfiles/pip.conf ${HOME}/.config/pip/pip.conf
+	mkdir -p ${HOME}/.config/uv
+	ln -s ${HOME}/dotfiles/uv.toml ${HOME}/.config/uv/uv.toml
 	mkdir -p ${HOME}/.config/fontconfig
 	ln -s ${HOME}/dotfiles/fonts.conf ${HOME}/.config/fontconfig/fonts.conf
 	mkdir -p ${HOME}/.config/mpv
@@ -50,6 +52,7 @@ clean:
 	rm -rf ${HOME}/.pdbrc.py
 	rm -rf ${HOME}/.ghci
 	rm -rf ${HOME}/.config/pip/pip.conf
+	rm -rf ${HOME}/.config/uv/uv.toml
 	rm -rf ${HOME}/.config/fontconfig/fonts.conf
 	rm -rf ${HOME}/.config/mpv/mpv.conf
 	rm -rf ${HOME}/.stack/config.yaml

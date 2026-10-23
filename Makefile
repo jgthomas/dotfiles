@@ -35,6 +35,8 @@ all: clean
 	cp gemini ${HOME}/.local/bin/gemini
 	chmod +x ${HOME}/.local/bin/gemini
 	ln -s ${HOME}/dotfiles/ripgreprc ${HOME}/.ripgreprc
+	mkdir -p ${HOME}/.codex
+	ln -s ${HOME}/dotfiles/AGENTS.md ${HOME}/.codex/AGENTS.md
 
 clean:
 	rm -rf ${HOME}/.vimrc
@@ -63,3 +65,4 @@ clean:
 	rm -rf ${HOME}/.config/firejail/gemini.profile
 	rm -rf ${HOME}/.local/bin/gemini
 	rm -rf ${HOME}/.ripgreprc
+	rm -f ${HOME}/.codex/AGENTS.md

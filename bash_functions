@@ -90,6 +90,29 @@ pkglog() {
     grep "${grep_options[@]}" -- "$pattern" "$logfile" | less -R
 }
 
+# Build and publish signed packages to the local AUR repository.
+aur_publish() {
+    if (( $# == 0 )); then
+        printf 'Usage: aur_publish <package> [<package> ...]\n' >&2
+        return 2
+    fi
+
+    local signing_home="$HOME/.local/share/pacman-repo-signing"
+    local source_home="${AUR_MAKEPKG_GNUPGHOME:-${GNUPGHOME:-$HOME/.gnupg}}"
+    local keys fingerprint
+    keys=$(gpg --homedir "$signing_home" --batch --with-colons --list-secret-keys) || return
+    fingerprint=$(awk -F: '$1 == "sec" { primary = 1 }
+                           $1 == "fpr" && primary { print $10; primary = 0 }' <<< "$keys")
+    if [[ ! "$fingerprint" =~ ^[0-9A-F]{40}$ ]]; then
+        printf 'Expected exactly one signing key in %s\n' "$signing_home" >&2
+        return 1
+    fi
+
+    GNUPGHOME="$signing_home" AUR_MAKEPKG_GNUPGHOME="$source_home" \
+        GPGKEY="$fingerprint" AUR_REPO_ADD='repo-add --include-sigs' \
+        command aur sync --sign -d aur_packages -- "$@"
+}
+
 # Colour output of man pages
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \

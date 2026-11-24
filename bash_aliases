@@ -27,9 +27,6 @@ alias batt='upower -i "$(upower -e | command grep BAT)"'
 # List available AUR upgrades
 alias aur_check="aur repo -d aur_packages -u"
 
-# Update AUR packages
-alias aur_update="aur sync -d aur_packages -u"
-
 # Copy CV to dropbox
 alias pubcv="rclone copy CV.pdf my_dropbox:"
 

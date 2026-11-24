@@ -24,9 +24,6 @@ alias wanip='curl --fail --silent --show-error https://ipinfo.io/json && echo'
 # Check current battery state
 alias batt='upower -i "$(upower -e | command grep BAT)"'
 
-# List available AUR upgrades
-alias aur_check="aur repo -d aur_packages -u"
-
 # Copy CV to dropbox
 alias pubcv="rclone copy CV.pdf my_dropbox:"
 
